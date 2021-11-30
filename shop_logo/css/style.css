@@ -1,0 +1,845 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;
+
+400;500;700;900&display=swap&subset=cyrillic-ext");
+@font-face {
+  font-family: "UniSans";
+  font-display: swap;
+  src: url("../fonts/ofont.ru_Uni Sans.woff") format("woff"), url("../fonts/ofont.ru_Uni Sans.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Play";
+  font-display: swap;
+  src: url("../fonts/ofont.ru_Play.woff") format("woff"), url("../fonts/ofont.ru_Play.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2#icons") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^=icon-]::before,
+[class*=" icon-"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icons" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^=icon-]::before,
+[class*=" icon-"]::before {
+  display: block;
+}
+
+.icon-arrow-down:before {
+  content: "\e900";
+}
+
+.icon-arrow-link:before {
+  content: "\e901";
+}
+
+.icon-cart:before {
+  content: "\e902";
+}
+
+.icon-favorite:before {
+  content: "\e903";
+}
+
+.icon-location:before {
+  content: "\e904";
+}
+
+.icon-phone:before {
+  content: "\e905";
+}
+
+.icon-search:before {
+  content: "\e906";
+}
+
+.icon-send:before {
+  content: "\e907";
+}
+
+.icon-share:before {
+  content: "\e908";
+}
+
+/* учли поля (что-бы контент не прилипал к краям экрана) */
+
+/*Обнуление*/
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+body {
+  color: #3a3a3a;
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.ibg img {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+._flyImage._ibg {
+  opacity: 1;
+  position: fixed;
+  z-index: 100;
+  -webkit-transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
+}
+
+.footer-title {
+  font-size: 24px;
+  line-height: 120.843%;
+  font-weight: 700;
+  color: #000000;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 120%;
+  text-align: center;
+}
+
+/* 10 */
+
+.btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 15px;
+  text-align: center;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  min-height: 48px;
+}
+
+.btn--white {
+  color: #e89f71;
+  background-color: #fff;
+}
+
+/* 12 */
+
+.slider-arrows {
+  display: grid;
+  grid-template-columns: repeat(2, 48px);
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
+}
+
+/* 13 */
+
+.slider-arrow {
+  pointer-events: auto;
+  border-radius: 50%;
+  height: 48px;
+  background-color: rgba(232, 159, 113, 0.3);
+  color: #e89f71;
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+/* 14 */
+
+.slider-arrow--prev::before {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+/* 15 */
+
+.slider-arrow--next::before {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+/* 16 */
+
+/* стрелочка в белом кружке: */
+
+.slider-arrow--white {
+  -webkit-box-shadow: 0 4px 14px 1px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 4px 14px 1px rgba(0, 0, 0, 0.16);
+  background-color: #fff;
+}
+
+/* Классы, которые Swiper добавляет автоматически(приего инициализации: */
+
+/* 17 */
+
+/* для оболочки точек: */
+
+.swiper-pagination-bullets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+/* 18 */
+
+/* для точек: */
+
+.swiper-pagination-bullet {
+  cursor: pointer;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 27px;
+          flex: 0 0 27px;
+  height: 27px;
+  position: relative;
+  /* отцентруем маленькую точку внутри: */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2px 0;
+  background-color: transparent;
+  /* отступы между точками (с учётом ореола): */
+  /* дорисуем маленькую точку для неактивного буллета: */
+  /* рисуем ореол (оранжевую границу) вокруг активной точки: */
+}
+
+.swiper-pagination-bullet:not(:last-child) {
+  margin-right: 12px;
+}
+
+.swiper-pagination-bullet::after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  background-color: #08a03b;
+  border-radius: 50%;
+  -webkit-transition: background-color 0.5s ease 0s;
+  -o-transition: background-color 0.5s ease 0s;
+  transition: background-color 0.5s ease 0s;
+}
+
+.swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid #e89f71;
+  -webkit-transition: -webkit-transform 0.5s ease 0s;
+  transition: -webkit-transform 0.5s ease 0s;
+  -o-transition: transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
+  /* скроем ореол для не активной точки: */
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
+/* 19 */
+
+/* для активной точки: */
+
+.swiper-pagination-bullet-active::after {
+  background-color: #e89f71;
+}
+
+.swiper-pagination-bullet-active::before {
+  /* покажем ореол для активной точки: */
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.no-webp .header{
+  background: url(../img/header_bg.jpg) top no-repeat; }
+
+/* .header__top {
+} */
+
+/* .top-header {
+} */
+
+.top-header__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90px;
+}
+
+.top-header__column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+
+.top-header__column--logo {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding: 20px 0 0 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 190px;
+          flex: 0 0 190px;
+  text-align: center;
+}
+
+/* .top-header__menu {
+} */
+
+/* .menu {
+} */
+
+.icon-menu {
+  display: none;
+}
+
+.menu__list {
+  display: grid;
+  grid-template-columns: 110px 130px 180px;
+}
+
+.menu__list li {
+  margin: 2px 0;
+}
+
+.menu__link {
+  font-family: "Play";
+  font-size: 14px;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: underline;
+  /* white-space: nowrap; */
+  color: #fff;
+  min-height: 27px;
+  padding: 3px 22px;
+}
+
+/* .top-header__logo {
+} */
+
+/* .top-header__contacts {
+} */
+
+.contacts-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contacts-header__column {
+  padding: 0 30px;
+  border-right: 1px solid #fff;
+}
+
+.contacts-header__column:last-child {
+  border: 0;
+}
+
+/* .contacts-header__item {
+} */
+
+.no-webp .contacts-header__item--icon{
+  background: url("../img/icons/header/phone.png") left no-repeat; }
+
+.contacts-header__item--icon {
+  z-index: 10;
+  padding: 0 0 0 37px;
+}
+
+.contacts-header__label {
+  font-family: "Play";
+  font-size: 12px;
+  font-weight: 300;
+  color: #fff;
+  margin: 0 0 5px 0;
+}
+
+.contacts-header__phone {
+  font-family: "Play";
+  font-size: 18px;
+  color: #fff;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+/* .header__bottom {
+} */
+
+/* .bottom-header {
+} */
+
+.bottom-header__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 63px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bottom-header__column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(50% - 95px);
+          flex: 0 1 calc(50% - 95px);
+}
+
+/* .bottom-header__actions {
+} */
+
+.actions-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.actions-header li {
+  margin: 0 54px 0 0;
+}
+
+.actions-header__item {
+  padding: 0 0 0 36px;
+  display: inline-block;
+  line-height: 24px;
+  color: #999999;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.actions-header__item span {
+  border-bottom: 1px dotted;
+}
+
+.no-webp .actions-header__item--login{
+  background: url("../img/icons/header/login.png") left no-repeat; }
+
+.no-webp .actions-header__item--reg{
+  background: url("../img/icons/header/user.png") left no-repeat; }
+
+.no-webp .actions-header__item--email{
+  background: url("../img/icons/header/email.png") left no-repeat; }
+
+.actions-header__item--email span {
+  border-bottom: 1px solid;
+}
+
+/* .bottom-header__info {
+} */
+
+.info-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info-header__column {
+  padding: 0 54px 0 0;
+}
+
+.info-header__column:last-child {
+  padding: 0;
+}
+
+.no-webp .info-header__callback{
+  background: url("../img/icons/header/callback.png") left no-repeat; }
+
+.info-header__callback {
+  padding: 0 0 0 35px;
+  display: inline-block;
+  line-height: 28px;
+  color: #1ab9ce;
+}
+
+.info-header__callback span {
+  border-bottom: 1px dotted;
+}
+
+.no-webp .info-header__schedule{
+  background: url("../img/icons/header/schedule.png") left no-repeat; }
+
+.info-header__schedule {
+  padding: 0 0 0 37px;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 18px;
+  color: #999999;
+}
+
+.info-header__schedule span {
+  font-weight: 900;
+}
+
+.no-webp .info-header__cart{
+  background: url("../img/icons/header/cart.png") left no-repeat; }
+
+.info-header__cart {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  -webkit-transform: translateY(3%);
+      -ms-transform: translateY(3%);
+          transform: translateY(3%);
+}
+
+.info-header__cart span {
+  position: absolute;
+  background-color: #f68038;
+  padding: 0 11px;
+  border-radius: 20px;
+  line-height: 25px;
+  right: -25px;
+  top: -3px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Play;
+  color: #fff;
+}
+
+@media (min-width: 991.98px) {
+  .menu__link:hover {
+    background-color: #068292;
+    border-radius: 20px;
+  }
+
+  .actions-header__item:hover {
+    color: #1ab9ce;
+  }
+}
+
+@media (max-width: 1192px) {
+  .menu__list {
+    grid-template-columns: 90px 110px 160px;
+  }
+
+  .menu__link {
+    padding: 3px 10px;
+  }
+
+  .contacts-header__column {
+    padding: 0 15px;
+  }
+
+  .contacts-header__item--icon {
+    padding: 0 0 0 33px;
+    /* background-size: 15px; */
+  }
+
+  .contacts-header__phone {
+    font-size: 16px;
+  }
+
+  .info-header__cart {
+    -webkit-transform: translateY(27%);
+        -ms-transform: translateY(27%);
+            transform: translateY(27%);
+  }
+
+  .info-header__cart span {
+    right: 2px;
+    top: -15px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .footer-title {
+    font-size: calc(20px + 4 * ((100vw - 320px) / 860));
+  }
+
+  .title {
+    font-size: calc(24px + 16 * ((100vw - 320px) / 860));
+  }
+
+  .actions-header li {
+    margin: 0 2.1186440678vw 0 0;
+  }
+
+  .info-header__column {
+    padding: 0 2.1186440678vw 0 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .icon-menu {
+    display: block;
+    width: 30px;
+    height: 18px;
+    position: relative;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  .icon-menu span {
+    -webkit-transition: 0.5s ease 0s;
+    -o-transition: 0.5s ease 0s;
+    transition: 0.5s ease 0s;
+    top: calc(50% - 1px);
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+  }
+
+  .icon-menu span:first-child {
+    top: 0;
+  }
+
+  .icon-menu span:last-child {
+    top: auto;
+    bottom: 0;
+  }
+
+  .icon-menu._active span {
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+  }
+
+  .icon-menu._active span:first-child {
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    top: calc(50% - 1px);
+  }
+
+  .icon-menu._active span:last-child {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    bottom: calc(50% - 1px);
+  }
+
+  .menu__body {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: auto;
+  }
+}
+
+@media (any-hover: hover) {
+  .btn--white:hover {
+    background-color: #e89f71;
+    color: #fff;
+  }
+
+  .slider-arrow:hover {
+    color: #fff;
+    background-color: #e89f71;
+  }
+
+  .slider-arrow--white:hover {
+    background-color: #e89f71;
+    color: #fff;
+  }
+}
+
+.webp .header{ background: url(../img/header_bg.webp) top no-repeat; }
+
+.webp .contacts-header__item--icon{ background: url(../img/icons/header/phone.webp) left no-repeat; }
+
+.webp .actions-header__item--login{ background: url(../img/icons/header/login.webp) left no-repeat; }
+
+.webp .actions-header__item--reg{ background: url(../img/icons/header/user.webp) left no-repeat; }
+
+.webp .actions-header__item--email{ background: url(../img/icons/header/email.webp) left no-repeat; }
+
+.webp .info-header__callback{ background: url(../img/icons/header/callback.webp) left no-repeat; }
+
+.webp .info-header__schedule{ background: url(../img/icons/header/schedule.webp) left no-repeat; }
+
+.webp .info-header__cart{ background: url(../img/icons/header/cart.webp) left no-repeat; }
