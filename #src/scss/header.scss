@@ -1,5 +1,8 @@
 .header {
 	background: url(../img/header_bg.jpg) top no-repeat;
+	@media (max-width: $md2+px) {
+		background: url(../img/header_bg.jpg) 0 0 no-repeat;
+	}
 }
 /* .header__top {
 } */
@@ -17,10 +20,16 @@
 }
 // для второй колонки укажем ширину жёстко 190рх:
 .top-header__column--logo {
-	align-self: flex-start;
-	padding: 20px 0 0 0;
 	flex: 0 0 190px;
 	text-align: center;
+	@media (max-width: $md2+px) {
+		padding: 10px 0 0 0;
+	}
+	@media (min-width: $md3+px) {
+		flex: 0 0 100px;
+		align-self: flex-start;
+		padding: 20px 0 0 0;
+	}
 }
 /* .top-header__menu {
 } */
@@ -71,16 +80,21 @@
 	}
 }
 
-// Скроем меню в момент появления кнопки меню-бургер:
 .menu__body {
 	@media (max-width: $md2+px) {
-		display: none;
 		position: fixed;
 		height: 100%;
 		width: 100%;
 		top: 0;
 		left: 0;
 		overflow: auto;
+		display: none; /* скроем меню в момент появления кнопки меню-бургер */
+		background-color: #14c0d4;
+		padding: 70px 20px 30px 20px;
+		z-index: 2;
+		&._active {
+			display: block; /* покажем меню при нажатии кнопки меню-бургер (добавляется класс _active */
+		}
 	}
 }
 .menu__list {
@@ -115,22 +129,38 @@
 		padding: 3px 10px;
 	}
 }
-/* .top-header__logo {
-} */
+.top-header__logo {
+	display: inline-block;
+	@media (max-width: $md3+px) {
+		width: 120px;
+		img {
+			max-width: 100%;
+		}
+	}
+}
 /* .top-header__contacts {
 } */
 .contacts-header {
 	display: flex;
 	justify-content: center;
+	@media (max-width: 640px) {
+		flex-direction: column;
+	}
 }
 .contacts-header__column {
 	padding: 0 30px;
-	border-right: 1px solid #fff;
-	&:last-child {
+	border-left: 1px solid #fff;
+	&:first-child {
 		border: 0;
 	}
 	@media (max-width: $md1+px) {
 		padding: 0 15px;
+	}
+	@media (max-width: 640px) {
+		border: none;
+		&:not(:last-child) {
+			margin: 0 0 7px 0;
+		}
 	}
 }
 /* .contacts-header__item {
@@ -171,6 +201,10 @@
 	height: 63px;
 	align-items: center;
 	justify-content: space-between;
+	@media (max-width: 959px) {
+		height: 100px;
+		flex-direction: column;
+	}
 }
 .bottom-header__column {
 	// установим ширину колонок 50% и уменьшив на половину размера логотипа (блок станет под логотипом) и разделим блоки по сторонам, установив для .bottom-header__content { justify-content: space-between; }
@@ -187,6 +221,9 @@
 			margin: 0 25 / $maxWidthContainer * 100vw 0 0;
 		}
 	}
+	@media (max-width: 959px) {
+		padding-top: 15px;
+	}
 }
 .actions-header__item {
 	padding: 0 0 0 36px;
@@ -200,6 +237,11 @@
 	@media (min-width: $md2+px) {
 		&:hover {
 			color: #1ab9ce;
+		}
+	}
+	@media (max-width: $md3+px) {
+		&:not(:last-child) {
+			top: 10px;
 		}
 	}
 }

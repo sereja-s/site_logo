@@ -1,4 +1,4 @@
-@media (max-width: $md2+px) {
+@media (max-width: $md1+px) {
 		
 	}
 
