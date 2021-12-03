@@ -25,20 +25,34 @@
 	@media (max-width: $md2+px) {
 		padding: 10px 0 0 0;
 	}
-	@media (min-width: $md3+px) {
+	/* @media (min-width: $md3+px) {
 		flex: 0 0 100px;
 		align-self: flex-start;
 		padding: 20px 0 0 0;
-	}
+	} */
 }
+
+.top-header__logo {
+	position: relative; /* вытаскиваем логотип на верх накрывающей плашки */
+	z-index: 5;
+
+	display: inline-block;
+	/* @media (max-width: $md3+px) {
+		width: 120px;
+		img {
+			max-width: 100%;
+		}
+	} */
+}
+
 /* .top-header__menu {
 } */
 
 /* .menu {
 } */
-.menu__icon {
-}
-// Нарисовали кнопку меню-бургер ( кол-во span: 3 ) и анимировали при нажатии
+/* .menu__icon {
+} */
+// Нарисовали кнопку меню-бургер ( кол-во span: 3 ) и анимировали при нажатии =====================================================
 .icon-menu {
 	display: none;
 	@media (max-width: $md2+px) {
@@ -80,6 +94,9 @@
 	}
 }
 
+//=============================================================================================================================
+
+// Меню, которое появляется при нажатии на кнопку меню-бургер:
 .menu__body {
 	@media (max-width: $md2+px) {
 		position: fixed;
@@ -89,9 +106,19 @@
 		left: 0;
 		overflow: auto;
 		display: none; /* скроем меню в момент появления кнопки меню-бургер */
-		background-color: #14c0d4;
-		padding: 70px 20px 30px 20px;
+		background-color: #fff;
+		padding: 90px 20px 30px 20px;
 		z-index: 2;
+		// рисуем накрывающую плашку шириной как у .top-header__content:
+		&::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 91px;
+			top: 0;
+			left: 0;
+			background-color: #0091b8;
+		}
 		&._active {
 			display: block; /* покажем меню при нажатии кнопки меню-бургер (добавляется класс _active */
 		}
@@ -105,6 +132,9 @@
 	}
 	@media (max-width: $md1+px) {
 		grid-template-columns: 90px 110px 160px;
+	}
+	@media (max-width: $md2+px) {
+		display: block; /* в выпадающем меню элемены расположатся в колонку */
 	}
 }
 .menu__link {
@@ -128,23 +158,28 @@
 	@media (max-width: $md1+px) {
 		padding: 3px 10px;
 	}
-}
-.top-header__logo {
-	display: inline-block;
-	@media (max-width: $md3+px) {
-		width: 120px;
-		img {
-			max-width: 100%;
-		}
+	@media (max-width: $md2+px) {
+		color: #000;
+		padding: 9px 5px;
+		font-size: 20px;
 	}
 }
-/* .top-header__contacts {
-} */
+
+.top-header__contacts {
+	@media (min-width: 426px) {
+		position: relative; /* вытаскиваем телефоны на верх накрывающей плашки */
+		z-index: 5;
+	}
+}
 .contacts-header {
 	display: flex;
 	justify-content: center;
 	@media (max-width: 640px) {
 		flex-direction: column;
+	}
+	@media (max-width: 425px) {
+		align-items: flex-end;
+		margin-top: 10px;
 	}
 }
 .contacts-header__column {
@@ -161,6 +196,9 @@
 		&:not(:last-child) {
 			margin: 0 0 7px 0;
 		}
+	}
+	@media (max-width: 425px) {
+		padding: 10px 7px;
 	}
 }
 /* .contacts-header__item {
@@ -180,6 +218,9 @@
 	font-weight: 300;
 	color: #fff;
 	margin: 0 0 5px 0;
+	@media (max-width: 425px) {
+		color: #000;
+	}
 }
 .contacts-header__phone {
 	font-family: "Play";
@@ -189,6 +230,9 @@
 	white-space: nowrap;
 	@media (max-width: $md1+px) {
 		font-size: 16px;
+	}
+	@media (max-width: 425px) {
+		color: #000;
 	}
 }
 
@@ -204,6 +248,9 @@
 	@media (max-width: 959px) {
 		height: 100px;
 		flex-direction: column;
+	}
+	@media (max-width: 425px) {
+		height: 58px;
 	}
 }
 .bottom-header__column {
@@ -224,6 +271,11 @@
 	@media (max-width: 959px) {
 		padding-top: 15px;
 	}
+	@media (max-width: 425px) {
+		justify-content: space-around;
+		flex-wrap: wrap;
+		padding-top: 5px;
+	}
 }
 .actions-header__item {
 	padding: 0 0 0 36px;
@@ -242,6 +294,12 @@
 	@media (max-width: $md3+px) {
 		&:not(:last-child) {
 			top: 10px;
+		}
+	}
+	@media (max-width: 425px) {
+		color: #24505c;
+		&:last-child {
+			margin-top: 25px;
 		}
 	}
 }
@@ -293,6 +351,10 @@
 	color: #999999;
 	span {
 		font-weight: 900;
+	}
+	@media (max-width: 425px) {
+		color: #24505c;
+		padding: 15px 0 10px 40px;
 	}
 }
 .info-header__cart {
