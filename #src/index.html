@@ -8,7 +8,66 @@
 <body>
 	<div class="wrapper">
 		@@include('_header.html',{})
+		<!-- flex-контейнер -->
 		<main class="page">
+			<div class="page__container container">
+				<!-- Боковая колонка (flex-контейнер)-->
+				<aside class="page__side">
+					<nav class="page__menu menu-page">
+						<!-- Оболочка для заголовка меню страницы (flex) -->
+						<div class="menu-page__header">
+							<div class="menu-page__title">Каталог товаров</div>
+							<div class="menu-page__burger">
+								<div class="menu-page__lines">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+							</div>
+						</div>
+						<div class="menu-page__body">
+							<ul class="menu-page__list">
+								<li><a data-item="0" href="#" class="menu-page__link menu-page__link--parent">Беговые
+										дорожки</a></li>
+								<li><a data-item="1" href="#" class="menu-page__link menu-page__link--parent">Эллиптические
+										тренажёры</a></li>
+								<li><a href="#" class="menu-page__link">Велотренажёры</a></li>
+								<li><a href="#" class="menu-page__link">Гребные тренажёры</a></li>
+								<li><a href="#" class="menu-page__link">Виюромассажёры</a></li>
+								<li><a data-item="2" href="#" class="menu-page__link menu-page__link--parent">Тенисные столы</a>
+								</li>
+								<li><a href="#" class="menu-page__link">Баскетбол</a></li>
+								<li><a data-item="3" href="#" class="menu-page__link menu-page__link--parent">Массажные
+										кресла</a></li>
+								<li><a data-item="4" href="#" class="menu-page__link menu-page__link--parent">Массажные
+										столы</a></li>
+								<li><a href="#" class="menu-page__link">Силовые тренажёры</a></li>
+								<li><a href="#" class="menu-page__link">Батуты</a></li>
+								<li><a href="#" class="menu-page__link">Детские городки</a></li>
+								<li><a href="#" class="menu-page__link">Дачная мебель</a></li>
+								<li><a href="#" class="menu-page__link">Уличные спортивные комплексы</a></li>
+								<li><a href="#" class="menu-page__link">Аксессуары</a></li>
+							</ul>
+						</div>
+						<!-- выпадающее меню -->
+						<div class="menu-page__submenu submenu-page">
+							<div class="submenu-page__item">
+								<ul class="submenu-page__menu">
+									<li><a href="#" class="submenu-page__link">Всепогодный</a></li>
+									<li><a href="#" class="submenu-page__link">Для помещений</a></li>
+									<li><a href="#" class="submenu-page__link">Профессиональный</a></li>
+									<li><a href="#" class="submenu-page__link">Любительский</a></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</aside>
+				<!-- flex-контейнер -->
+				<div class="page__content"></div>
+
+			</div>
+
+
 			<div class="image__danilovi container">
 				<div class="image">
 					<img src="img/Danilovi_6.jpg" alt="">

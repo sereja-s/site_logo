@@ -796,7 +796,7 @@ let _slideToggle = (target, duration = 500) => {
 // МЕНЮ-БУРГЕР и его анимация
 
 /* 1-получим объект (иконку меню-бургер) Будем искать этот класс: */
-const iconMenu = document.querySelector('.menu__icon');
+const iconMenu = document.querySelector('.icon-menu');
 /* 3-найдём и сохраним в константу menuBody объект .menu__body (будет нужно для анимирования появления меню при нажатии на иконке (меню-бургер) */
 const menuBody = document.querySelector('.menu__body');
 /* 2-проверка: есть ли такой обхект(класс) в константе iconMenu: */
@@ -805,7 +805,7 @@ if (iconMenu) {
 	iconMenu.addEventListener("click", function (e) {
 		/* 7-запретим скроллить страницу при открытом меню: */
 		//обатимся к body и будем добавлять(убирать) технический класс '_lock' при нажатой иконке(меню-бургер):
-		document.body.classList.toggle('_lock');
+		//document.body.classList.toggle('_lock');
 		/* 5-обращаемся к иконке(меню-бургер) и добавляем(убираем) класс '_active' при нажатии на неё: */
 		iconMenu.classList.toggle('_active'); /* чтобы анимнровать иконку(меню-бургер) при нажатии */
 		/* 6-обращаемся к объекту .menu__body и добавляем(убираем) класс '_active' при нажатии на неё: */

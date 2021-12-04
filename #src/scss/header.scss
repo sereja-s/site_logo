@@ -1,7 +1,12 @@
 .header {
-	background: url(../img/header_bg.jpg) top no-repeat;
-	@media (max-width: $md2+px) {
-		background: url(../img/header_bg.jpg) 0 0 no-repeat;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	background: #fff url(../img/header_bg.jpg) top no-repeat;
+	@media (max-width: 991px) {
+		background: #fff url(../img/header_bg.jpg) 0 0 no-repeat;
 	}
 }
 /* .header__top {
@@ -22,10 +27,10 @@
 .top-header__column--logo {
 	flex: 0 0 190px;
 	text-align: center;
-	@media (max-width: $md2+px) {
+	@media (max-width: 991px) {
 		padding: 10px 0 0 0;
 	}
-	/* @media (min-width: $md3+px) {
+	/* @media (min-width: 768px) {
 		flex: 0 0 100px;
 		align-self: flex-start;
 		padding: 20px 0 0 0;
@@ -37,7 +42,7 @@
 	z-index: 5;
 
 	display: inline-block;
-	/* @media (max-width: $md3+px) {
+	/* @media (max-width: 768px) {
 		width: 120px;
 		img {
 			max-width: 100%;
@@ -52,10 +57,10 @@
 } */
 /* .menu__icon {
 } */
-// Нарисовали кнопку меню-бургер ( кол-во span: 3 ) и анимировали при нажатии =====================================================
+// Нарисовали кнопку меню-бургер для header (кол-во span: 3) и анимировали при нажатии ===========================================
 .icon-menu {
 	display: none;
-	@media (max-width: $md2+px) {
+	@media (max-width: 991px) {
 		display: block;
 		width: 30px;
 		height: 18px;
@@ -98,7 +103,10 @@
 
 // Меню, которое появляется при нажатии на кнопку меню-бургер:
 .menu__body {
-	@media (max-width: $md2+px) {
+	@media (max-width: 991px) {
+		//opacity: 0;
+		//transition: all 1s ease 0s;
+		//visibility: hidden;
 		position: fixed;
 		height: 100%;
 		width: 100%;
@@ -112,15 +120,17 @@
 		// рисуем накрывающую плашку шириной как у .top-header__content:
 		&::before {
 			content: "";
-			position: absolute;
+			position: fixed;
 			width: 100%;
 			height: 91px;
 			top: 0;
 			left: 0;
+			z-index: 3;
 			background-color: #0091b8;
 		}
 		&._active {
-			display: block; /* покажем меню при нажатии кнопки меню-бургер (добавляется класс _active */
+			display: block; /* покажем меню при нажатии кнопки меню-бургер (добавляется класс _active) */
+			//opacity: 1;
 		}
 	}
 }
@@ -130,17 +140,17 @@
 	li {
 		margin: 2px 0;
 	}
-	@media (max-width: $md1+px) {
+	@media (max-width: 1192px) {
 		grid-template-columns: 90px 110px 160px;
 	}
-	@media (max-width: $md2+px) {
+	@media (max-width: 991px) {
 		display: block; /* в выпадающем меню элемены расположатся в колонку */
 	}
 }
 .menu__link {
 	font-family: "Play";
 	font-size: 14px;
-	transition: all 0.5s ease 0s;
+	transition: all 0.7s ease 0s;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
@@ -149,16 +159,16 @@
 	color: #fff;
 	min-height: 27px;
 	padding: 3px 22px;
-	@media (min-width: $md2+px) {
+	@media (min-width: 991px) {
 		&:hover {
-			background-color: #068292;
+			background-color: #15b2c7;
 			border-radius: 20px;
 		}
 	}
-	@media (max-width: $md1+px) {
+	@media (max-width: 1192px) {
 		padding: 3px 10px;
 	}
-	@media (max-width: $md2+px) {
+	@media (max-width: 991px) {
 		color: #000;
 		padding: 9px 5px;
 		font-size: 20px;
@@ -188,7 +198,7 @@
 	&:first-child {
 		border: 0;
 	}
-	@media (max-width: $md1+px) {
+	@media (max-width: 1192px) {
 		padding: 0 15px;
 	}
 	@media (max-width: 640px) {
@@ -207,7 +217,7 @@
 	background: url("../img/icons/header/phone.png") left no-repeat;
 	z-index: 10;
 	padding: 0 0 0 37px;
-	@media (max-width: $md1+px) {
+	@media (max-width: 1192px) {
 		padding: 0 0 0 33px;
 		/* background-size: 15px; */
 	}
@@ -228,7 +238,7 @@
 	color: #fff;
 	font-weight: 900;
 	white-space: nowrap;
-	@media (max-width: $md1+px) {
+	@media (max-width: 1192px) {
 		font-size: 16px;
 	}
 	@media (max-width: 425px) {
@@ -264,8 +274,8 @@
 	align-items: center;
 	li {
 		margin: 0 54px 0 0;
-		@media (max-width: $maxWidthContainer+px) {
-			margin: 0 25 / $maxWidthContainer * 100vw 0 0;
+		@media (max-width: 1180px) {
+			margin: 0 0.0212 * 100vw 0 0; /* margin: 0 25 / $maxWidthContainer * 100vw 0 0 */
 		}
 	}
 	@media (max-width: 959px) {
@@ -286,12 +296,12 @@
 	span {
 		border-bottom: 1px dotted;
 	}
-	@media (min-width: $md2+px) {
+	@media (min-width: 991px) {
 		&:hover {
 			color: #1ab9ce;
 		}
 	}
-	@media (max-width: $md3+px) {
+	@media (max-width: 768px) {
 		&:not(:last-child) {
 			top: 10px;
 		}
@@ -325,8 +335,8 @@
 }
 .info-header__column {
 	padding: 0 54px 0 0;
-	@media (max-width: $maxWidthContainer+px) {
-		padding: 0 25 / $maxWidthContainer * 100vw 0 0;
+	@media (max-width: 1180px) {
+		padding: 0 0.0212 * 100vw 0 0; /* padding: 0 25 / $maxWidthContainer * 100vw 0 0; */
 	}
 	&:last-child {
 		padding: 0;
@@ -364,8 +374,11 @@
 	background: url("../img/icons/header/cart.png") left no-repeat;
 	position: relative;
 	transform: translateY(3%);
-	@media (max-width: $md1+px) {
+	@media (max-width: 1192px) {
 		transform: translateY(27%);
+	}
+	@media (max-width: 425px) {
+		transform: translateY(37%);
 	}
 	span {
 		position: absolute;
@@ -379,7 +392,7 @@
 		font-weight: 700;
 		font-family: Play;
 		color: #fff;
-		@media (max-width: $md1+px) {
+		@media (max-width: 1192px) {
 			right: 2px;
 			top: -15px;
 		}

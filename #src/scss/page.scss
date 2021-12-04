@@ -1,0 +1,122 @@
+.page {
+	flex: 1 1 auto;
+	padding: 175px 0 0 0;
+}
+.page__container {
+	display: flex;
+}
+
+.page__side {
+	flex: 0 0 260px;
+}
+.page__menu {
+}
+.menu-page {
+	background: url("../img/bg_menu.jpg") top no-repeat;
+}
+.menu-page__header {
+	padding: 20px;
+	display: flex;
+	align-items: center;
+}
+.menu-page__title {
+	color: #ffffff;
+	font-family: "UniSans";
+	font-size: 30px;
+	text-transform: uppercase;
+	letter-spacing: 0.75px;
+	line-height: 116.6%; /* 35 / 30 * 100% */
+}
+.menu-page__burger {
+	// нарисовали фон для кнопки меню-бургер страницы
+	width: 36px;
+	height: 36px;
+	flex: 0 0 36px;
+	background-color: #068292;
+	// Нарисовали кнопку меню-бургер для page (кол-во span: 3) и анимировали при нажатии ===========================================
+	position: relative;
+	cursor: pointer;
+	z-index: 5;
+	padding: 10px 6px;
+	span {
+		transition: 0.5s ease 0s;
+		top: calc(50% - 1px);
+		left: 0;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: #fff;
+		&:first-child {
+			top: 0;
+		}
+		&:last-child {
+			top: auto;
+			bottom: 0;
+		}
+	}
+	&._active {
+		span {
+			transform: scale(0);
+			&:first-child {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+			&:last-child {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+}
+
+//=============================================================================================================================
+
+.menu-page__lines {
+	height: 16px;
+	position: relative;
+}
+
+.menu-page__body {
+}
+.menu-page__list {
+	li {
+		border-bottom: 1px solid #1aa7b9;
+	}
+}
+.menu-page__link {
+	letter-spacing: 0.3px;
+	font-weight: 300;
+	font-size: 14px;
+	color: #fff;
+	display: block;
+	padding: 12px 20px;
+	transition: all 0.7s ease 0s;
+	position: relative;
+	@media (min-width: 991px) {
+		&:hover {
+			background-color: #15b2c7;
+		}
+	}
+	// пропишем стрелочки в меню (двойные):
+}
+.menu-page__link--parent {
+	&::after {
+		content: "";
+		background: url("../img/icons/page/menu_arrow.png");
+		position: absolute;
+		right: 20px;
+		top: 50%;
+		width: 14px;
+		height: 14px;
+		transform: translate(0px, -50%);
+	}
+}
+
+.menu-page__submenu {
+}
+.submenu-page {
+}
+.page__content {
+	flex: 1 1 auto;
+	padding: 0 0 0 30px;
+}

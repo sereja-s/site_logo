@@ -83,6 +83,146 @@
   content: "\e908";
 }
 
+.page {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 175px 0 0 0;
+}
+
+.page__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.page__side {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 260px;
+          flex: 0 0 260px;
+}
+
+.no-webp .menu-page{
+  background: url("../img/bg_menu.jpg") top no-repeat; }
+
+.menu-page__header {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-page__title {
+  color: #ffffff;
+  font-family: "UniSans";
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  line-height: 116.6%;
+  /* 35 / 30 * 100% */
+}
+
+.menu-page__burger {
+  width: 36px;
+  height: 36px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 36px;
+          flex: 0 0 36px;
+  background-color: #068292;
+  position: relative;
+  cursor: pointer;
+  z-index: 5;
+  padding: 10px 6px;
+}
+
+.menu-page__burger span {
+  -webkit-transition: 0.5s ease 0s;
+  -o-transition: 0.5s ease 0s;
+  transition: 0.5s ease 0s;
+  top: calc(50% - 1px);
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+
+.menu-page__burger span:first-child {
+  top: 0;
+}
+
+.menu-page__burger span:last-child {
+  top: auto;
+  bottom: 0;
+}
+
+.menu-page__burger._active span {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
+.menu-page__burger._active span:first-child {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: calc(50% - 1px);
+}
+
+.menu-page__burger._active span:last-child {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  bottom: calc(50% - 1px);
+}
+
+.menu-page__lines {
+  height: 16px;
+  position: relative;
+}
+
+.menu-page__list li {
+  border-bottom: 1px solid #1aa7b9;
+}
+
+.menu-page__link {
+  letter-spacing: 0.3px;
+  font-weight: 300;
+  font-size: 14px;
+  color: #fff;
+  display: block;
+  padding: 12px 20px;
+  -webkit-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+  position: relative;
+}
+
+.no-webp .menu-page__link--parent::after{
+  background: url("../img/icons/page/menu_arrow.png"); }
+
+.menu-page__link--parent::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  -webkit-transform: translate(0px, -50%);
+      -ms-transform: translate(0px, -50%);
+          transform: translate(0px, -50%);
+}
+
+.page__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 0 0 0 30px;
+}
+
 /* учли поля (что-бы контент не прилипал к краям экрана) */
 
 /*Обнуление*/
@@ -413,7 +553,15 @@ body._lock {
 }
 
 .no-webp .header{
-  background: url(../img/header_bg.jpg) top no-repeat; }
+  background: #fff url(../img/header_bg.jpg) top no-repeat; }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
 
 /* .header__top {
 } */
@@ -442,7 +590,7 @@ body._lock {
       -ms-flex: 0 0 190px;
           flex: 0 0 190px;
   text-align: center;
-  /* @media (min-width: $md3+px) {
+  /* @media (min-width: 768px) {
   	flex: 0 0 100px;
   	align-self: flex-start;
   	padding: 20px 0 0 0;
@@ -454,7 +602,7 @@ body._lock {
   /* вытаскиваем логотип на верх накрывающей плашки */
   z-index: 5;
   display: inline-block;
-  /* @media (max-width: $md3+px) {
+  /* @media (max-width: 768px) {
   	width: 120px;
   	img {
   		max-width: 100%;
@@ -487,9 +635,9 @@ body._lock {
 .menu__link {
   font-family: "Play";
   font-size: 14px;
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
+  -webkit-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -706,9 +854,13 @@ body._lock {
   }
 }
 
-@media (min-width: 991.98px) {
+@media (min-width: 991px) {
+  .menu-page__link:hover {
+    background-color: #15b2c7;
+  }
+
   .menu__link:hover {
-    background-color: #068292;
+    background-color: #15b2c7;
     border-radius: 20px;
   }
 
@@ -761,17 +913,19 @@ body._lock {
   }
 
   .actions-header li {
-    margin: 0 2.1186440678vw 0 0;
+    margin: 0 2.12vw 0 0;
+    /* margin: 0 25 / $maxWidthContainer * 100vw 0 0 */
   }
 
   .info-header__column {
-    padding: 0 2.1186440678vw 0 0;
+    padding: 0 2.12vw 0 0;
+    /* padding: 0 25 / $maxWidthContainer * 100vw 0 0; */
   }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 991px) {
   .no-webp .header{
-    background: url(../img/header_bg.jpg) 0 0 no-repeat; }
+    background: #fff url(../img/header_bg.jpg) 0 0 no-repeat; }
 
   .top-header__column--logo {
     padding: 10px 0 0 0;
@@ -843,17 +997,18 @@ body._lock {
 
   .menu__body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 91px;
     top: 0;
     left: 0;
+    z-index: 3;
     background-color: #0091b8;
   }
 
   .menu__body._active {
     display: block;
-    /* покажем меню при нажатии кнопки меню-бургер (добавляется класс _active */
+    /* покажем меню при нажатии кнопки меню-бургер (добавляется класс _active) */
   }
 
   .menu__list {
@@ -882,7 +1037,7 @@ body._lock {
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .actions-header__item:not(:last-child) {
     top: 10px;
   }
@@ -949,6 +1104,12 @@ body._lock {
     color: #24505c;
     padding: 15px 0 10px 40px;
   }
+
+  .info-header__cart {
+    -webkit-transform: translateY(37%);
+        -ms-transform: translateY(37%);
+            transform: translateY(37%);
+  }
 }
 
 @media (any-hover: hover) {
@@ -968,7 +1129,11 @@ body._lock {
   }
 }
 
-.webp .header{ background: url(../img/header_bg.webp) top no-repeat; }
+.webp .menu-page{ background: url(../img/bg_menu.webp) top no-repeat; }
+
+.webp .menu-page__link--parent::after{ background: url(../img/icons/page/menu_arrow.webp); }
+
+.webp .header{ background: #fff url(../img/header_bg.webp) top no-repeat; }
 
 .webp .contacts-header__item--icon{ background: url(../img/icons/header/phone.webp) left no-repeat; }
 
@@ -984,6 +1149,6 @@ body._lock {
 
 .webp .info-header__cart{ background: url(../img/icons/header/cart.webp) left no-repeat; }
 
-@media (max-width: 991.98px){
-  .webp .header{ background: url(../img/header_bg.webp) 0 0 no-repeat; }
+@media (max-width: 991px){
+  .webp .header{ background: #fff url(../img/header_bg.webp) 0 0 no-repeat; }
 }
