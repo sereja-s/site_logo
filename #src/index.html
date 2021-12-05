@@ -14,6 +14,7 @@
 				<!-- Боковая колонка (flex-контейнер)-->
 				<aside class="page__side">
 					<nav class="page__menu menu-page">
+
 						<!-- Оболочка для заголовка меню страницы (flex) -->
 						<div class="menu-page__header">
 							<div class="menu-page__title">Каталог товаров</div>
@@ -27,20 +28,185 @@
 						</div>
 						<div class="menu-page__body">
 							<ul class="menu-page__list">
-								<li><a data-item="0" href="#" class="menu-page__link menu-page__link--parent">Беговые
-										дорожки</a></li>
-								<li><a data-item="1" href="#" class="menu-page__link menu-page__link--parent">Эллиптические
-										тренажёры</a></li>
+								<li class="menu-page__parent">
+									<a href="#" class="menu-page__link">Беговые
+										дорожки</a>
+									<div class="menu-page__submenu submenu-page">
+										<div class="submenu-page__item">
+											<ul class="submenu-page__menu">
+												<li><a href="#" class="submenu-page__link">Всепогодный</a></li>
+												<li><a href="#" class="submenu-page__link">Для помещений</a></li>
+												<li><a href="#" class="submenu-page__link">Профессиональный</a></li>
+												<li><a href="#" class="submenu-page__link">Любительский</a></li>
+											</ul>
+											<div class="submenu-page__product">
+												<div class="item-product">
+													<div class="item-product__labels">
+														<!-- flex-элемент -->
+														<div class="item-product__label">Товар дня</div>
+													</div>
+													<!-- flex- -->
+													<a href="#" class="item-product__image">
+														<img src="img/products/01.jpg" alt="image">
+													</a>
+													<div class="item-product__body">
+														<a href="#" class="item-product__title">Беговые дорожки</a>
+														<!-- flex-контейнер -->
+														<div class="item-product__footer">
+															<div class="item-product__old-price rub">65 000</div>
+															<a href="#" class="item-product__add"></a>
+															<div class="item-product__price rub">64 900</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="menu-page__parent">
+									<a href="#" class="menu-page__link">Эллиптические
+										тренажёры</a>
+									<div class="menu-page__submenu submenu-page">
+										<div class="submenu-page__item">
+											<ul class="submenu-page__menu">
+												<li><a href="#" class="submenu-page__link">Всепогодный</a></li>
+												<li><a href="#" class="submenu-page__link">Для помещений</a></li>
+												<li><a href="#" class="submenu-page__link">Профессиональный</a></li>
+												<li><a href="#" class="submenu-page__link">Любительский</a></li>
+											</ul>
+											<div class="submenu-page__product">
+												<div class="item-product">
+													<div class="item-product__labels">
+														<!-- flex-элемент -->
+														<div class="item-product__label">Товар дня</div>
+													</div>
+													<!-- flex- -->
+													<a href="#" class="item-product__image">
+														<img src="img/products/01.jpg" alt="image">
+													</a>
+													<div class="item-product__body">
+														<a href="#" class="item-product__title">Эллиптические тренажёры</a>
+														<!-- flex-контейнер -->
+														<div class="item-product__footer">
+															<div class="item-product__old-price rub">65 000</div>
+															<a href="#" class="item-product__add"></a>
+															<div class="item-product__price rub">64 900</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
 								<li><a href="#" class="menu-page__link">Велотренажёры</a></li>
 								<li><a href="#" class="menu-page__link">Гребные тренажёры</a></li>
 								<li><a href="#" class="menu-page__link">Виюромассажёры</a></li>
-								<li><a data-item="2" href="#" class="menu-page__link menu-page__link--parent">Тенисные столы</a>
+								<li class="menu-page__parent">
+									<a href="#" class="menu-page__link">Тенисные
+										столы</a>
+									<div class="menu-page__submenu submenu-page">
+										<div class="submenu-page__item">
+											<ul class="submenu-page__menu">
+												<li><a href="#" class="submenu-page__link">Всепогодный</a></li>
+												<li><a href="#" class="submenu-page__link">Для помещений</a></li>
+												<li><a href="#" class="submenu-page__link">Профессиональный</a></li>
+												<li><a href="#" class="submenu-page__link">Любительский</a></li>
+											</ul>
+											<div class="submenu-page__product">
+												<div class="item-product">
+													<div class="item-product__labels">
+														<!-- flex-элемент -->
+														<div class="item-product__label">Товар дня</div>
+													</div>
+													<!-- flex- -->
+													<a href="#" class="item-product__image">
+														<img src="img/products/01.jpg" alt="image">
+													</a>
+													<div class="item-product__body">
+														<a href="#" class="item-product__title">Домашний тенисный стол</a>
+														<!-- flex-контейнер -->
+														<div class="item-product__footer">
+															<div class="item-product__old-price rub">65 000</div>
+															<a href="#" class="item-product__add"></a>
+															<div class="item-product__price rub">64 900</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</li>
 								<li><a href="#" class="menu-page__link">Баскетбол</a></li>
-								<li><a data-item="3" href="#" class="menu-page__link menu-page__link--parent">Массажные
-										кресла</a></li>
-								<li><a data-item="4" href="#" class="menu-page__link menu-page__link--parent">Массажные
-										столы</a></li>
+								<li class="menu-page__parent">
+									<a href="#" class="menu-page__link">Массажные
+										кресла</a>
+									<div class="menu-page__submenu submenu-page">
+										<div class="submenu-page__item">
+											<ul class="submenu-page__menu">
+												<li><a href="#" class="submenu-page__link">Всепогодный</a></li>
+												<li><a href="#" class="submenu-page__link">Для помещений</a></li>
+												<li><a href="#" class="submenu-page__link">Профессиональный</a></li>
+												<li><a href="#" class="submenu-page__link">Любительский</a></li>
+											</ul>
+											<div class="submenu-page__product">
+												<div class="item-product">
+													<div class="item-product__labels">
+														<!-- flex-элемент -->
+														<div class="item-product__label">Товар дня</div>
+													</div>
+													<!-- flex- -->
+													<a href="#" class="item-product__image">
+														<img src="img/products/01.jpg" alt="image">
+													</a>
+													<div class="item-product__body">
+														<a href="#" class="item-product__title">Массажные кресла</a>
+														<!-- flex-контейнер -->
+														<div class="item-product__footer">
+															<div class="item-product__old-price rub">65 000</div>
+															<a href="#" class="item-product__add"></a>
+															<div class="item-product__price rub">64 900</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="menu-page__parent">
+									<a data-item="4" href="#" class="menu-page__link">Массажные
+										столы</a>
+									<div class="menu-page__submenu submenu-page">
+										<div class="submenu-page__item">
+											<ul class="submenu-page__menu">
+												<li><a href="#" class="submenu-page__link">Всепогодный</a></li>
+												<li><a href="#" class="submenu-page__link">Для помещений</a></li>
+												<li><a href="#" class="submenu-page__link">Профессиональный</a></li>
+												<li><a href="#" class="submenu-page__link">Любительский</a></li>
+											</ul>
+											<div class="submenu-page__product">
+												<div class="item-product">
+													<div class="item-product__labels">
+														<!-- flex-элемент -->
+														<div class="item-product__label">Товар дня</div>
+													</div>
+													<!-- flex- -->
+													<a href="#" class="item-product__image">
+														<img src="img/products/01.jpg" alt="image">
+													</a>
+													<div class="item-product__body">
+														<a href="#" class="item-product__title">Массажные столы</a>
+														<!-- flex-контейнер -->
+														<div class="item-product__footer">
+															<div class="item-product__old-price rub">65 000</div>
+															<a href="#" class="item-product__add"></a>
+															<div class="item-product__price rub">64 900</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
 								<li><a href="#" class="menu-page__link">Силовые тренажёры</a></li>
 								<li><a href="#" class="menu-page__link">Батуты</a></li>
 								<li><a href="#" class="menu-page__link">Детские городки</a></li>
@@ -49,17 +215,7 @@
 								<li><a href="#" class="menu-page__link">Аксессуары</a></li>
 							</ul>
 						</div>
-						<!-- выпадающее меню -->
-						<div class="menu-page__submenu submenu-page">
-							<div class="submenu-page__item">
-								<ul class="submenu-page__menu">
-									<li><a href="#" class="submenu-page__link">Всепогодный</a></li>
-									<li><a href="#" class="submenu-page__link">Для помещений</a></li>
-									<li><a href="#" class="submenu-page__link">Профессиональный</a></li>
-									<li><a href="#" class="submenu-page__link">Любительский</a></li>
-								</ul>
-							</div>
-						</div>
+
 					</nav>
 				</aside>
 				<!-- flex-контейнер -->

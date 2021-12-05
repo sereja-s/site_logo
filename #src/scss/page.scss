@@ -9,10 +9,11 @@
 .page__side {
 	flex: 0 0 260px;
 }
-.page__menu {
-}
+/* .page__menu {
+} */
 .menu-page {
 	background: url("../img/bg_menu.jpg") top no-repeat;
+	position: relative;
 }
 .menu-page__header {
 	padding: 20px;
@@ -27,13 +28,15 @@
 	letter-spacing: 0.75px;
 	line-height: 116.6%; /* 35 / 30 * 100% */
 }
+
+//===================================================
 .menu-page__burger {
 	// нарисовали фон для кнопки меню-бургер страницы
 	width: 36px;
 	height: 36px;
 	flex: 0 0 36px;
 	background-color: #068292;
-	// Нарисовали кнопку меню-бургер для page (кол-во span: 3) и анимировали при нажатии ===========================================
+	// Нарисовали кнопку меню-бургер для page (кол-во span: 3) и анимировали при нажатии:
 	position: relative;
 	cursor: pointer;
 	z-index: 5;
@@ -68,18 +71,19 @@
 		}
 	}
 }
-
-//=============================================================================================================================
+//===================================================
 
 .menu-page__lines {
 	height: 16px;
 	position: relative;
 }
 
-.menu-page__body {
-}
+/* .menu-page__body {
+	position: relative;
+	z-index: 2;
+} */
 .menu-page__list {
-	li {
+	> li {
 		border-bottom: 1px solid #1aa7b9;
 	}
 }
@@ -97,26 +101,170 @@
 			background-color: #15b2c7;
 		}
 	}
-	// пропишем стрелочки в меню (двойные):
 }
-.menu-page__link--parent {
-	&::after {
-		content: "";
-		background: url("../img/icons/page/menu_arrow.png");
-		position: absolute;
-		right: 20px;
-		top: 50%;
-		width: 14px;
-		height: 14px;
-		transform: translate(0px, -50%);
+
+// пропишем стрелочки в меню (двойные):
+.menu-page__parent {
+	.menu-page__link {
+		&::after {
+			content: "";
+			background: url("../img/icons/page/menu_arrow.png");
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			width: 14px;
+			height: 14px;
+			transform: translate(0px, -50%);
+		}
+	}
+	&._active {
+		.submenu-page__item {
+			z-index: 2;
+			transform: translate(0, 0);
+		}
+		.menu-page__link {
+			background-color: #15b2c7;
+		}
 	}
 }
 
-.menu-page__submenu {
-}
-.submenu-page {
-}
+/* .menu-page__submenu {
+} */
+/* .submenu-page {
+} */
 .page__content {
 	flex: 1 1 auto;
 	padding: 0 0 0 30px;
+}
+
+.menu-page__submenu {
+	width: 100%;
+	position: absolute; /* относительно всего .menu-page */
+	top: 0;
+	height: 100%;
+	left: 100%; /* Выезжающая карточка спрячется под меню */
+	overflow: hidden;
+}
+/* .submenu-page {
+} */
+
+// Разместим выезжающие карточки одна под другой:
+.submenu-page__item {
+	width: 280px;
+	border: 2px solid #098494;
+	background-color: #ffffff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	transition: all 0.7s ease 0s;
+	transform: translate(-100%, 0);
+}
+
+.submenu-page__menu {
+	padding: 20px 0;
+	border-bottom: 1px solid #dedede;
+}
+.submenu-page__link {
+	color: #1ab9ce;
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: 0.3px;
+	display: block; /* чтобы сработали блочные свойства для ссылок (строчных) */
+	padding: 10px 40px;
+	@media (min-width: 991px) {
+		&:hover {
+			background-color: #71c7d3;
+			color: #fff;
+		}
+	}
+}
+.submenu-page__product {
+	padding: 0 15px;
+}
+.item-product {
+	padding: 15px;
+	position: relative;
+}
+.item-product__labels {
+	position: absolute;
+	left: 15px;
+	top: 15px;
+}
+.item-product__label {
+	margin: 0 0 5px 0;
+	padding: 0 15px;
+	text-transform: uppercase;
+	height: 21px;
+	background-color: #fd8424;
+	border-radius: 15px;
+	color: #fff;
+	font-weight: 900;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.item-product__image {
+	height: 195px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 0;
+	// расположем внутри картинку:
+	img {
+		max-width: 100%;
+		max-height: 175px;
+	}
+}
+
+.item-product__body {
+	padding: 0 10px;
+}
+.item-product__title {
+	color: #36949f;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 24px;
+	display: inline-block;
+	margin: 0 0 5px 0;
+	@media (min-width: 991px) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+.item-product__footer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.item-product__old-price {
+	flex: 1 1 100%; /* flex-элемент разместится на всю ширину */
+	text-align: right;
+	color: #999999;
+	font-size: 18px;
+	font-weight: 300;
+	text-decoration: line-through;
+	// уменьшим размер значка-рубль:
+	&::after {
+		font-size: 14px;
+	}
+	display: none;
+}
+
+.item-product__add {
+	width: 48px;
+	height: 48px;
+	background: url("../img/icons/page/cart_gray.png") 0 0 no-repeat;
+}
+.item-product__price {
+	color: #333333;
+	font-size: 24px;
+	font-weight: 900;
+	// уменьшим размер значка-рубль:
+	&::after {
+		font-size: 18px;
+	}
 }
