@@ -131,21 +131,44 @@ body {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	padding: 0 15px;
-	text-align: center;
+	padding: 0 25px;
+
 	transition: all 0.5s ease 0s;
-	min-height: 48px;
-	&--white {
-		color: $orangeColor;
-		background-color: #fff;
-		@media (any-hover: hover) {
-			&:hover {
-				// будет работать при наведении курсором (на устройствах, оборудованных мышью)
-				background-color: $orangeColor;
-				color: #fff;
-			}
+	height: 39px;
+	background-color: #f68038;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: 900;
+	line-height: 18px;
+	text-transform: uppercase;
+	@media (any-hover: hover) {
+		&:hover {
+			// будет работать при наведении курсором (на устройствах, оборудованных мышью)
+			background-color: #f19d69;
 		}
 	}
+	&._fw {
+		width: 100%;
+	}
+}
+
+//================================================== Класс input ================================================================
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	appearance: none;
+}
+input {
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	padding: 0 20px;
+}
+textarea.input {
+	resize: none;
+	padding: 0 0;
 }
 
 //========================================== Элементы управления слайдером Swiper: ================================================

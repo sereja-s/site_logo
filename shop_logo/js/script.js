@@ -22,7 +22,7 @@ testWebP(function (support) {
 
 "use strict";
 
-// МЕНЮ-БУРГЕР и его анимация
+// МЕНЮ-БУРГЕР и его анимация (в шапке сайта): 
 
 /* 1-получим объект (иконку меню-бургер) Будем искать этот класс: */
 const iconMenu = document.querySelector('.icon-menu');
@@ -221,6 +221,20 @@ for (let index = 0; index < menuParents.length; index++) {
 		menuParent.classList.remove('_active');
 	});
 }
+
+//=================================================================================================================================
+
+// Меню-бургер на странице: 
+
+let menuPageBurger = document.querySelector('.menu-page__burger');
+let menuPageBody = document.querySelector('.menu-page__body');
+menuPageBurger.addEventListener("click", function (e) {
+	menuPageBurger.classList.toggle('_active');
+	//menuPageBody.classList.toggle('_active'); /* отключили открытие меню с использованием файла scss */
+	_slideToggle(menuPageBody); /* подключили (вызвали) функцию для плавного движения меню (при показе-уходе) */
+});
+
+
 
 
 //==================================================================================================================================
@@ -914,83 +928,85 @@ if (spoilersArray.length > 0) {
 /* функция _slideUp, анимированно скрывает объект */
 let _slideUp = (target, duration = 500) => {
 	/* добавим проверку: если у объкта нет технического класса _slide: */
-	if (!target.classList.contains('_slide')) {
-		/* добавим этот класс */
-		target.classList.add('_slide');
-		target.style.transitionProperty = 'height, margin, padding';
-		target.style.transitionDuration = duration + 'ms';
-		target.style.height = target.offsetHeight + 'px';
-		target.offsetHeight;
-		target.style.overflow = 'hidden';
-		target.style.height = 0;
-		target.style.paddingTop = 0;
-		target.style.paddingBottom = 0;
-		target.style.marginTop = 0;
-		target.style.marginBottom = 0;
-		window.setTimeout(() => {
-			target.hidden = true; // вместо: 	target.style.display = 'none';
-			target.style.removeProperty('height');
-			target.style.removeProperty('padding-top');
-			target.style.removeProperty('padding-bottom');
-			target.style.removeProperty('margin-top');
-			target.style.removeProperty('margin-bottom');
-			target.style.removeProperty('overflow');
-			target.style.removeProperty('transition-duration');
-			target.style.removeProperty('transition-property');
-			target.classList.remove('_slide');
-		}, duration);
-	}
-}
+	//if (!target.classList.contains('_slide')) {
+	/* добавим этот класс */
+	//target.classList.add('_slide');
+	target.style.transitionProperty = 'height, margin, padding';
+	target.style.transitionDuration = duration + 'ms';
+	target.style.height = target.offsetHeight + 'px';
+	target.offsetHeight;
+	target.style.overflow = 'hidden';
+	target.style.height = 0;
+	target.style.paddingTop = 0;
+	target.style.paddingBottom = 0;
+	target.style.marginTop = 0;
+	target.style.marginBottom = 0;
+	window.setTimeout(() => {
 
-/* функция _slideUp, анимированно показывает объект */
-let _slideDown = (target, duration = 500) => {
-	/* добавим проверку: если у объкта нет технического класса _slide: */
-	if (!target.classList.contains('_slide')) {
-		/* добавим этот класс */
-		target.classList.add('_slide');
-		if (target.hidden) {
-			target.hidden = false;
-		}
-		/* 	target.style.removeProperty('display');
-			let display = window.getComputedStyle(target).display;
-			if (display === 'none')
-				display = 'block';
-		
-			target.style.display = display; */
-		let height = target.offsetHeight;
-		target.style.overflow = 'hidden';
-		target.style.height = 0;
-		target.style.paddingTop = 0;
-		target.style.paddingBottom = 0;
-		target.style.marginTop = 0;
-		target.style.marginBottom = 0;
-		target.offsetHeight;
-		target.style.transitionProperty = "height, margin, padding";
-		target.style.transitionDuration = duration + 'ms';
-		target.style.height = height + 'px';
+		target.style.display = 'none'; // вместо target.hidden = true;
+		target.style.removeProperty('height');
 		target.style.removeProperty('padding-top');
 		target.style.removeProperty('padding-bottom');
 		target.style.removeProperty('margin-top');
 		target.style.removeProperty('margin-bottom');
-		window.setTimeout(() => {
-			target.style.removeProperty('height');
-			target.style.removeProperty('overflow');
-			target.style.removeProperty('transition-duration');
-			target.style.removeProperty('transition-property');
-			target.classList.remove('_slide');
-		}, duration);
-	}
+		target.style.removeProperty('overflow');
+		target.style.removeProperty('transition-duration');
+		target.style.removeProperty('transition-property');
+		target.classList.remove('_slide');
+	}, duration);
 }
+//}
+
+/* функция _slideUp, анимированно показывает объект */
+let _slideDown = (target, duration = 500) => {
+	/* добавим проверку: если у объкта нет технического класса _slide: */
+	//if (!target.classList.contains('_slide')) {
+	/* добавим этот класс */
+	//target.classList.add('_slide');
+	//if (target.hidden) {
+	//target.hidden = false;
+	//}
+	target.style.removeProperty('display');
+	let display = window.getComputedStyle(target).display;
+	if (display === 'none')
+		display = 'block';
+
+	target.style.display = display;
+	let height = target.offsetHeight;
+	target.style.overflow = 'hidden';
+	target.style.height = 0;
+	target.style.paddingTop = 0;
+	target.style.paddingBottom = 0;
+	target.style.marginTop = 0;
+	target.style.marginBottom = 0;
+	target.offsetHeight;
+	target.style.transitionProperty = "height, margin, padding";
+	target.style.transitionDuration = duration + 'ms';
+	target.style.height = height + 'px';
+	target.style.removeProperty('padding-top');
+	target.style.removeProperty('padding-bottom');
+	target.style.removeProperty('margin-top');
+	target.style.removeProperty('margin-bottom');
+	window.setTimeout(() => {
+		target.style.removeProperty('height');
+		target.style.removeProperty('overflow');
+		target.style.removeProperty('transition-duration');
+		target.style.removeProperty('transition-property');
+		target.classList.remove('_slide');
+	}, duration);
+}
+//}
 
 /* функция _slideToggle вызывает функции _slideDown или _slideUp, когда нужно показать или скрыть обьект */
 let _slideToggle = (target, duration = 500) => {
-	/* if (!target.classList.contains('_slide')) {
+	if (!target.classList.contains('_slide')) {
 		target.classList.add('_slide');
-		if (window.getComputedStyle(target).display === 'none') { */
-	if (target.hidden) {
-		return _slideDown(target, duration);
-	} else {
-		return _slideUp(target, duration);
+		if (window.getComputedStyle(target).display === 'none') {
+			/* if (target.hidden) { */
+			return _slideDown(target, duration);
+		} else {
+			return _slideUp(target, duration);
+		}
 	}
 }
 /* } */
