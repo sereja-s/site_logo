@@ -273,8 +273,8 @@
 
 //==================================================================================================================================
 
-.page__search {
-}
+/* .page__search {
+} */
 .search-page {
 	display: flex;
 	position: relative;
@@ -285,6 +285,17 @@
 	align-items: center;
 	padding: 0 14px;
 	background-color: #f3f3f3;
+}
+.search-page__title {
+	display: flex;
+	align-items: center;
+	span {
+		font-family: Play;
+		margin: 0 10px;
+		color: #918c8c;
+		font-weight: 300;
+		border-bottom: 1px dashed;
+	}
 	&::before {
 		content: "";
 		width: 32px;
@@ -293,35 +304,43 @@
 	}
 	&::after {
 		content: "";
+		transition: all 0.7s ease 0s;
 		width: 15px;
 		height: 15px;
 		background: url("../img/icons/page/down-arrows.png") 0 0 no-repeat;
 	}
-	span {
-		font-family: Play;
-		margin: 0 10px;
-		color: #918c8c;
-		font-weight: 300;
-		border-bottom: 1px dashed;
+	&._active {
+		&::after {
+			transform: rotate(-180deg);
+		}
 	}
 }
-.search-page__title {
-	display: flex;
-	align-items: center;
-}
-.search-page__catgories {
+.search-page__categories {
 	position: absolute;
 	top: 100%;
 	left: 0;
 	width: 100%;
 }
-.catgories-search {
+.categories-search {
+	display: none; /* скроем выпадающее меню поиска */
+	border: 1px solid #f3f3f3;
 	background-color: #fff;
+	&::after {
+		content: "";
+		background-color: #f68068;
+		height: 4px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+}
+
+.categories-search__row {
 	display: flex;
 }
-.catgories-search__row {
-}
-.catgories-search__column {
+
+.categories-search__column {
 	flex: 1 1 33.333%;
 	padding: 27px 40px;
 	border-right: 1px solid #f3f3f3;
@@ -329,9 +348,31 @@
 		bottom: 0;
 	}
 }
-.catgories-search__list {
+.categories-search__list {
+	li {
+		margin: 0 0 20px 0;
+		&:last-child {
+			margin: 0;
+		}
+	}
 }
-.catgories-search__link {
+
+.categories-search__checkbox {
+	.checkbox__input {
+		&:checked + .checkbox__text {
+			color: #fd8424;
+		}
+	}
+	.checkbox__text {
+		color: #999;
+		&::before {
+			display: none; // убрали квадрат рядом
+		}
+	}
+}
+
+.categories-search__link {
+	color: #999999;
 }
 .search-page__input {
 	border-top: 2px solid #f2f2f2;
@@ -340,8 +381,4 @@
 	.input {
 		height: 100%;
 	}
-}
-.search-page__btn {
-}
-.btn {
 }

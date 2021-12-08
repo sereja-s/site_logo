@@ -234,6 +234,17 @@ menuPageBurger.addEventListener("click", function (e) {
 	_slideToggle(menuPageBody); /* подключили (вызвали) функцию для плавного движения меню (при показе-уходе) */
 });
 
+//=================================================================================================================================
+
+// Выпадающее меню поиска: 
+
+let searchSelect = document.querySelector('.search-page__title');
+let categoriesSearch = document.querySelector('.categories-search');
+searchSelect.addEventListener("click", function (e) {
+	searchSelect.parentElement.classList.toggle('_active'); /* добавляем(убираем) технический класс _active, классу родительского (для .search-page__title) объекта .search-page__select */
+	_slideToggle(categoriesSearch); /* подключили (вызвали) функцию для плавного движения меню (при показе-уходе) */
+});
+
 
 
 
