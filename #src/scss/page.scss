@@ -289,12 +289,15 @@
 .search-page__title {
 	display: flex;
 	align-items: center;
+	color: #918c8c;
+	font-weight: 300;
 	span {
 		font-family: Play;
 		margin: 0 10px;
-		color: #918c8c;
-		font-weight: 300;
 		border-bottom: 1px dashed;
+		&:last-child {
+			display: none;
+		}
 	}
 	&::before {
 		content: "";
@@ -308,6 +311,14 @@
 		width: 15px;
 		height: 15px;
 		background: url("../img/icons/page/down-arrows.png") 0 0 no-repeat;
+	}
+	&._categories {
+		span {
+			display: none;
+			&:last-child {
+				display: block;
+			}
+		}
 	}
 	&._active {
 		&::after {

@@ -446,14 +446,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #918c8c;
+  font-weight: 300;
 }
 
 .search-page__title span {
   font-family: Play;
   margin: 0 10px;
-  color: #918c8c;
-  font-weight: 300;
   border-bottom: 1px dashed;
+}
+
+.search-page__title span:last-child {
+  display: none;
 }
 
 .no-webp .search-page__title::before{
@@ -475,6 +479,14 @@
   transition: all 0.7s ease 0s;
   width: 15px;
   height: 15px;
+}
+
+.search-page__title._categories span {
+  display: none;
+}
+
+.search-page__title._categories span:last-child {
+  display: block;
 }
 
 .search-page__title._active::after {

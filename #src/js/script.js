@@ -241,12 +241,36 @@ menuPageBurger.addEventListener("click", function (e) {
 let searchSelect = document.querySelector('.search-page__title');
 let categoriesSearch = document.querySelector('.categories-search');
 searchSelect.addEventListener("click", function (e) {
-	searchSelect.parentElement.classList.toggle('_active'); /* добавляем(убираем) технический класс _active, классу родительского (для .search-page__title) объекта .search-page__select */
+	searchSelect.classList.toggle('_active');
 	_slideToggle(categoriesSearch); /* подключили (вызвали) функцию для плавного движения меню (при показе-уходе) */
 });
 
+//=================================================================================================================================
 
+// Вывод количества категорий, выбранных в меню поиска: 
 
+let checkboxCategories = document.querySelectorAll('.categories-search__checkbox');
+
+for (let index = 0; index < checkboxCategories.length; index++) {
+	const checkboxCategory = checkboxCategories[index];
+	checkboxCategory.addEventListener("change", function (e) {
+		checkboxCategory.classList.toggle('_active');
+
+		let checkboxActiveCategories = document.querySelectorAll('.categories-search__checkbox._active');
+		// условие: если выбрано больше ноль категорий
+		if (checkboxActiveCategories.length > 0) {
+			// переменной добавили технический класс _categories: 
+			searchSelect.classList.add('_categories');
+			let searchQuantity = searchSelect.querySelector('.search-page__quantity');
+			// В HTML выводим атрибут data-text="Выбрано категорий:" и через пробел полученное кол-во выбранных категорий: 
+			searchQuantity.innerHTML = searchQuantity.getAttribute('data-text') + ' ' + checkboxActiveCategories.length
+		} else {
+			// у переменной убрали технический класс _categories: 
+			searchSelect.classList.remove('_categories');
+
+		}
+	});
+}
 
 //==================================================================================================================================
 "use strict"
