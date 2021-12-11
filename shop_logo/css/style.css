@@ -1,8 +1,5 @@
 @charset "UTF-8";
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;
-
-400;500;700;900&display=swap&subset=cyrillic-ext");
 @font-face {
   font-family: "UniSans";
   font-display: swap;
@@ -97,6 +94,8 @@
 }
 
 .page__side {
+  position: relative;
+  z-index: 3;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 260px;
           flex: 0 0 260px;
@@ -231,6 +230,10 @@
           transform: translate(0px, -50%);
 }
 
+.menu-page__parent._active .menu-page__submenu {
+  pointer-events: all;
+}
+
 .menu-page__parent._active .submenu-page__item {
   z-index: 2;
   -webkit-transform: translate(0, 0);
@@ -242,9 +245,6 @@
   background-color: #15b2c7;
 }
 
-/* .menu-page__submenu {
-} */
-
 /* .submenu-page {
 } */
 
@@ -252,6 +252,8 @@
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  min-width: 0;
+  /*  */
   padding: 0 0 0 30px;
 }
 
@@ -264,6 +266,7 @@
   left: 100%;
   /* Выезжающая карточка спрячется под меню */
   overflow: hidden;
+  pointer-events: none;
 }
 
 /* .submenu-page {
@@ -417,8 +420,11 @@
   font-size: 18px;
 }
 
-/* .page__search {
-} */
+.page__search {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 22px 0;
+}
 
 .search-page {
   display: -webkit-box;
@@ -573,6 +579,188 @@
   height: 100%;
 }
 
+.page__slider {
+  margin: 0 0 65px 0;
+}
+
+/* .mainslider {
+} */
+
+/* .mainslider__body {
+} */
+
+.mainslider__slide {
+  position: relative;
+}
+
+.mainslider__content {
+  position: relative;
+  z-index: 2;
+}
+
+.content-mainslider {
+  padding: 20px 35px 60px 35px;
+}
+
+.content-mainslider__title {
+  color: #333333;
+  font-size: 48px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 43px;
+  margin: 0 0 50px 0;
+}
+
+.content-mainslider__title span {
+  display: block;
+  /* текст расположится в столбик */
+  color: #f68038;
+}
+
+/* .content-mainslider__text {
+} */
+
+.text-mainslider {
+  color: #333;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.text-mainslider__text-1 {
+  color: #f68038;
+  font-size: 18px;
+}
+
+.text-mainslider__text-2 {
+  color: #fff;
+  line-height: 1;
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #92918e;
+}
+
+.text-mainslider__text-3 {
+  color: #939393;
+}
+
+.content-mainslider__footer {
+  padding: 175px 0 0 0;
+  text-align: center;
+}
+
+.content-mainslider__price {
+  margin: 0 0 24px 0;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 24px;
+}
+
+.content-mainslider__price::after {
+  font-size: 30px;
+  margin: 0 0 0 5px;
+}
+
+.content-mainslider__price:last-child {
+  margin: 0;
+}
+
+.content-mainslider__button {
+  height: 33px;
+  border: 3px solid #fff;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 15px;
+  padding: 0 20px;
+}
+
+.no-webp .content-mainslider__button span{
+  background: url("../img/icons/page/btn_arrow.png") right no-repeat; }
+
+.content-mainslider__button span {
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0 35px 0 0;
+}
+
+.mainslider__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.mainslider__dotts {
+  position: relative;
+  z-index: 2;
+  margin: -17px 0 0 0;
+  /* подняли точки выше (на слайд) */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  counter-reset: item;
+}
+
+.mainslider__dotts .swiper-pagination-bullet {
+  cursor: pointer;
+  margin: 0 23px;
+  width: 55px;
+  height: 55px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 1);
+}
+
+.mainslider__dotts .swiper-pagination-bullet::after {
+  opacity: 0;
+  -webkit-transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
+  color: #fffefe;
+  font-size: 16px;
+  font-weight: 900;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #f68038;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  counter-increment: item;
+  content: counter(item);
+}
+
+.mainslider__dotts .swiper-pagination-bullet-active::after {
+  opacity: 1;
+}
+
 /* учли поля (что-бы контент не прилипал к краям экрана) */
 
 /*Обнуление*/
@@ -702,7 +890,7 @@ body._lock {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
+  /* position: relative; */
 }
 
 .ibg img {
@@ -896,91 +1084,25 @@ textarea.input {
 
 /* для оболочки точек: */
 
-.swiper-pagination-bullets {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
 /* 18 */
 
 /* для точек: */
 
-.swiper-pagination-bullet {
-  cursor: pointer;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 27px;
-          flex: 0 0 27px;
-  height: 27px;
-  position: relative;
-  /* отцентруем маленькую точку внутри: */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 2px 0;
-  background-color: transparent;
-  /* отступы между точками (с учётом ореола): */
-  /* дорисуем маленькую точку для неактивного буллета: */
-  /* рисуем ореол (оранжевую границу) вокруг активной точки: */
-}
+/* отцентруем маленькую точку внутри: */
 
-.swiper-pagination-bullet:not(:last-child) {
-  margin-right: 12px;
-}
+/* отступы между точками (с учётом ореола): */
 
-.swiper-pagination-bullet::after {
-  content: "";
-  width: 11px;
-  height: 11px;
-  background-color: #08a03b;
-  border-radius: 50%;
-  -webkit-transition: background-color 0.5s ease 0s;
-  -o-transition: background-color 0.5s ease 0s;
-  transition: background-color 0.5s ease 0s;
-}
+/* дорисуем маленькую точку для неактивного буллета: */
 
-.swiper-pagination-bullet::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 1px solid #e89f71;
-  -webkit-transition: -webkit-transform 0.5s ease 0s;
-  transition: -webkit-transform 0.5s ease 0s;
-  -o-transition: transform 0.5s ease 0s;
-  transition: transform 0.5s ease 0s;
-  transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
-  /* скроем ореол для не активной точки: */
-  -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-          transform: scale(0);
-}
+/* рисуем ореол (оранжевую границу) вокруг активной точки: */
+
+/* скроем ореол для не активной точки: */
 
 /* 19 */
 
 /* для активной точки: */
 
-.swiper-pagination-bullet-active::after {
-  background-color: #e89f71;
-}
-
-.swiper-pagination-bullet-active::before {
-  /* покажем ореол для активной точки: */
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-}
+/* покажем ореол для активной точки: */
 
 .no-webp .header{
   background: #fff url(../img/header_bg.jpg) top no-repeat; }
@@ -1581,6 +1703,8 @@ textarea.input {
 
 .webp .search-page__title::after{ background: url(../img/icons/page/down-arrows.webp) 0 0 no-repeat; }
 
+.webp .content-mainslider__button span{ background: url(../img/icons/page/btn_arrow.webp) right no-repeat; }
+
 .webp .header{ background: #fff url(../img/header_bg.webp) top no-repeat; }
 
 .webp .contacts-header__item--icon{ background: url(../img/icons/header/phone.webp) left no-repeat; }
@@ -1598,5 +1722,6 @@ textarea.input {
 .webp .info-header__cart{ background: url(../img/icons/header/cart.webp) left no-repeat; }
 
 @media (max-width: 991px){
+
   .webp .header{ background: #fff url(../img/header_bg.webp) 0 0 no-repeat; }
 }

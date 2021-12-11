@@ -7,6 +7,8 @@
 }
 
 .page__side {
+	position: relative;
+	z-index: 3;
 	flex: 0 0 260px;
 }
 /* .page__menu {
@@ -120,6 +122,9 @@
 		}
 	}
 	&._active {
+		.menu-page__submenu {
+			pointer-events: all;
+		}
 		.submenu-page__item {
 			z-index: 2;
 			transform: translate(0, 0);
@@ -130,12 +135,11 @@
 	}
 }
 
-/* .menu-page__submenu {
-} */
 /* .submenu-page {
 } */
 .page__content {
 	flex: 1 1 auto;
+	min-width: 0; /*  */
 	padding: 0 0 0 30px;
 }
 
@@ -146,6 +150,7 @@
 	height: 100%;
 	left: 100%; /* Выезжающая карточка спрячется под меню */
 	overflow: hidden;
+	pointer-events: none;
 }
 /* .submenu-page {
 } */
@@ -273,8 +278,11 @@
 
 //==================================================================================================================================
 
-/* .page__search {
-} */
+.page__search {
+	position: relative;
+	z-index: 2;
+	margin: 0 0 22px 0;
+}
 .search-page {
 	display: flex;
 	position: relative;
@@ -393,3 +401,5 @@
 		height: 100%;
 	}
 }
+
+//==================================================================================================================================

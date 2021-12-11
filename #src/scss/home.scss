@@ -1,0 +1,144 @@
+.page__slider {
+	margin: 0 0 65px 0;
+}
+/* .mainslider {
+} */
+/* .mainslider__body {
+} */
+
+.mainslider__slide {
+	position: relative;
+}
+.mainslider__content {
+	position: relative;
+	z-index: 2;
+}
+.content-mainslider {
+	padding: 20px 35px 60px 35px;
+}
+.content-mainslider__title {
+	color: #333333;
+	font-size: 48px;
+	font-weight: 900;
+	text-transform: uppercase;
+	line-height: 43px;
+	margin: 0 0 50px 0;
+	span {
+		display: block; /* текст расположится в столбик */
+		color: #f68038;
+	}
+}
+/* .content-mainslider__text {
+} */
+
+.text-mainslider {
+	color: #333;
+	font-size: 14px;
+	font-weight: 900;
+	line-height: 24px;
+	text-transform: uppercase;
+}
+.text-mainslider__text-1 {
+	color: #f68038;
+	font-size: 18px;
+}
+.text-mainslider__text-2 {
+	color: #fff;
+	line-height: 1;
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: #92918e;
+}
+.text-mainslider__text-3 {
+	color: #939393;
+}
+.content-mainslider__footer {
+	padding: 175px 0 0 0;
+	text-align: center;
+}
+.content-mainslider__price {
+	margin: 0 0 24px 0;
+	color: #fff;
+	font-size: 36px;
+	font-weight: 900;
+	line-height: 24px;
+	&::after {
+		font-size: 30px;
+		margin: 0 0 0 5px;
+	}
+	&:last-child {
+		margin: 0;
+	}
+}
+
+.content-mainslider__button {
+	height: 33px;
+	border: 3px solid #fff;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;
+	padding: 0 20px;
+	span {
+		font-weight: 900;
+		color: #fff;
+		text-transform: uppercase;
+		padding: 0 35px 0 0;
+		background: url("../img/icons/page/btn_arrow.png") right no-repeat;
+	}
+}
+.mainslider__image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.mainslider__dotts {
+	position: relative;
+	z-index: 2;
+	margin: -17px 0 0 0; /* подняли точки выше (на слайд) */
+	display: flex;
+	justify-content: center;
+	counter-reset: item;
+	.swiper-pagination-bullet {
+		cursor: pointer;
+		margin: 0 23px;
+		width: 55px;
+		height: 55px;
+		overflow: hidden;
+		border-radius: 50%;
+		border: 3px solid #fff;
+		position: relative;
+		// свойства для размещения картинок не активных слайдов в точках:
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		opacity: var(--swiper-pagination-bullet-inactive-opacity, 1);
+		// пропишем оранжевые точки (активный слайд)
+		&::after {
+			opacity: 0;
+			transition: all 1s ease 0s;
+			color: #fffefe;
+			font-size: 16px;
+			font-weight: 900;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			display: flex;
+			justify-content: center;
+			background-color: #f68038;
+			align-items: center;
+			counter-increment: item;
+			content: counter(item);
+		}
+	}
+	.swiper-pagination-bullet-active {
+		&::after {
+			opacity: 1;
+		}
+	}
+}
