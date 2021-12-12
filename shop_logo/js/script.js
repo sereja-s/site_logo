@@ -208,18 +208,54 @@ da.init();
 
 //==================================================================================================================================
 
+// ОПРЕДЕЛИМ НА КАКОМ УСТРОЙСТВЕ ОТКРЫТА НАША СТРАНИЦА
+
+const isMobile = {
+	Android: function () {
+		return navigator.userAgent.match(/Android/i)
+	},
+	BlackBerry: function () {
+		return navigator.userAgent.match(/BlackBerry/i)
+	},
+	iOS: function () {
+		return navigator.userAgent.match(/iPhone|iPad|iPod/i)
+	},
+	Opera: function () {
+		return navigator.userAgent.match(/Opera Mini/i)
+	},
+	Windows: function () {
+		return navigator.userAgent.match(/IEMobile/i)
+	},
+	any: function () {
+		return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+	}
+};
+
 // Выезжающее меню на странице:
 
-let menuParents = document.querySelectorAll('.menu-page__parent');
+// Cделаем проверку: является ли устройство мобильным (реагирует на касание) 3:58:12
 
-for (let index = 0; index < menuParents.length; index++) {
-	const menuParent = menuParents[index];
-	menuParent.addEventListener("mouseenter", function (e) {
-		menuParent.classList.add('_active');
-	});
-	menuParent.addEventListener("mouseleave", function (e) {
-		menuParent.classList.remove('_active');
-	});
+if (isMobile.any()) {
+	let menuParents = document.querySelectorAll('.menu-page__parent>a');
+	for (let index = 0; index < menuParents.length; index++) {
+		const menuParent = menuParents[index];
+		menuParent.addEventListener("click", function (e) {
+			menuParent.parentElement.classList.toggle('_active');
+			e.preventDefault();
+		});
+	}
+} else {
+	let menuParents = document.querySelectorAll('.menu-page__parent');
+
+	for (let index = 0; index < menuParents.length; index++) {
+		const menuParent = menuParents[index];
+		menuParent.addEventListener("mouseenter", function (e) {
+			menuParent.classList.add('_active');
+		});
+		menuParent.addEventListener("mouseleave", function (e) {
+			menuParent.classList.remove('_active');
+		});
+	}
 }
 
 //=================================================================================================================================
@@ -273,30 +309,130 @@ for (let index = 0; index < checkboxCategories.length; index++) {
 }
 
 //==================================================================================================================================
+
+//  Инициализируем SWIPER
+let sliders = document.querySelectorAll('.swiper');
+if (sliders) {
+	for (let index = 0; index < sliders.length; index++) {
+		let slider = sliders[index];
+		if (!slider.classList.contains('swiper-bild')) {
+			let slider_items = slider.children;
+			if (slider_items) {
+				for (let index = 0; index < slider_items.length; index++) {
+					let el = slider_items[index];
+					el.classList.add('swiper-slide');
+
+				}
+			}
+
+			let slider_content = slider.innerHTML;
+			let slider_wrapper = document.createElement('div');
+			slider_wrapper.classList.add('swiper-wrapper');
+			slider_wrapper.innerHTML = slider_content;
+			slider.innerHTML = '';
+			slider.appendChild(slider_wrapper);
+			slider.classList.add('swiper-bild');
+
+			if (slider.classList.contains('_swiper_scroll')) {
+				let sliderScroll = document.createElement('div');
+				sliderScroll.classList.add('swiper-scrollbar');
+				slider.appendChild(sliderScroll);
+			}
+		}
+		if (slider.classList.contains('_gallery')) {
+
+		}
+	}
+	sliders_bild_callback();
+}
+
+function sliders_bild_callback(params) { }
+
+let sliderScrollitems = document.querySelectorAll('._swiper_scroll');
+if (sliderScrollitems.length > 0) {
+	for (let index = 0; index < sliderScrollitems.length; index++) {
+		const sliderScrollitem = sliderScrollitems[index];
+		const sliderScrollBar = sliderScrollitem.querySelectorAll('.swiper-scrollbar');
+		const sliderScroll = new Swiper(sliderScrollitem, {
+			observer: true,
+			observeParents: true,
+			direction: 'vertical',
+			slidesPerView: 'auto',
+			freeMode: true,
+			scrollBar: {
+				el: sliderScrollBar,
+				draggable: true,
+				snapOnRelease: false
+			},
+			mousewheel: {
+				releaseOnEdges: true,
+			},
+		});
+		sliderScroll.scrollbar.updateSize();
+	}
+}
+
+function sliders_bild_callback(params) { }
+
+//======================================================== mainslider ==========================================================
+
+/* 1-проверим существует ли класс '.mainslider__body': */
+//if (document.querySelector('.mainslider__body')) {
+//new Swiper('.mainslider__body', {
+
+
+/* Инициализируем Swiper */
+/* 1-проверим существует ли класс '.mainslider': */
+// 2-в параметры передали объект, который должен стать слайдером (теперь слайды можно листать перетаскиванием) Дополнительные настройки добавим внутри фигурных скобок
+
+if (document.querySelector('.mainslider')) {
+	let mainslider = new Swiper('.mainslider__body', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		// оболочка слайдера адаптирует свою высоту к высоте текущего активного слайда
+		autoHeight: true,
+		//watchOverflow: true,
+		speed: 800,
+		//loop: true, /* бесконечный слайд (для правильной работы: добавить min-width: 0; для .page__content (flex-контейнера. в котором лежит оболочка для главного слайдера .page__slider)) */
+		//loopAdditionalSlides: 5,
+		//preloadImages: false,
+		//parallax: true, // для применения это эффекта нужно добавить в html-файле к slider-main__content атрибуты: data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" ( когда слайд становится активным: контентная часть слайда движется по оси X движестя влево и проявляется(становится не прохрачной))
+		// Dotts
+		pagination: {
+			el: '.mainslider__dotts',
+			clickable: true,
+		},
+		//Arrows
+		// обратимся к конкретным кнопкам, указав в начале класс родителя:
+		/* navigation: {
+			nextEl: '.slider-main .slider-arrow--next',
+			prevEl: '.slider-main .slider-arrow--prev',
+		} */
+		on: {
+			lazyImageReady: function () {
+				ibg();
+			},
+		}
+	});
+
+	// Добавим картинки не активных слайдов точкам (3:41:29)
+	let mainsliderImages = document.querySelectorAll('.mainslider__image ');
+	let mainsliderDotts = document.querySelectorAll('.mainslider__dotts .swiper-pagination-bullet');
+
+	for (let index = 0; index < mainsliderImages.length; index++) {
+		const mainsliderImage = mainsliderImages[index].querySelector('img').getAttribute('src');
+		mainsliderDotts[index].style.backgroundImage = "url('" + mainsliderImage + "')";
+	}
+}
+
+//==================================================================================================================================
+
+//==================================================================================================================================
 "use strict"
 
-// ОПРЕДЕЛИМ НА КАКОМ УСТРОЙСТВЕ ОТКРЫТА НАША СТРАНИЦА
 
-const isMobile = {
-	Android: function () {
-		return navigator.userAgent.match(/Android/i)
-	},
-	BlackBerry: function () {
-		return navigator.userAgent.match(/BlackBerry/i)
-	},
-	iOS: function () {
-		return navigator.userAgent.match(/iPhone|iPad|iPod/i)
-	},
-	Opera: function () {
-		return navigator.userAgent.match(/Opera Mini/i)
-	},
-	Windows: function () {
-		return navigator.userAgent.match(/IEMobile/i)
-	},
-	any: function () {
-		return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-	}
-};
 
 
 //==================================================================================================================================
@@ -1046,124 +1182,7 @@ let _slideToggle = (target, duration = 500) => {
 }
 /* } */
 
-//==================================================================================================================================
 
-//  Инициализируем SWIPER
-let sliders = document.querySelectorAll('.swiper');
-if (sliders) {
-	for (let index = 0; index < sliders.length; index++) {
-		let slider = sliders[index];
-		if (!slider.classList.contains('swiper-bild')) {
-			let slider_items = slider.children;
-			if (slider_items) {
-				for (let index = 0; index < slider_items.length; index++) {
-					let el = slider_items[index];
-					el.classList.add('swiper-slide');
-
-				}
-			}
-
-			let slider_content = slider.innerHTML;
-			let slider_wrapper = document.createElement('div');
-			slider_wrapper.classList.add('swiper-wrapper');
-			slider_wrapper.innerHTML = slider_content;
-			slider.innerHTML = '';
-			slider.appendChild(slider_wrapper);
-			slider.classList.add('swiper-bild');
-
-			if (slider.classList.contains('_swiper_scroll')) {
-				let sliderScroll = document.createElement('div');
-				sliderScroll.classList.add('swiper-scrollbar');
-				slider.appendChild(sliderScroll);
-			}
-		}
-		if (slider.classList.contains('_gallery')) {
-
-		}
-	}
-	sliders_bild_callback();
-}
-
-function sliders_bild_callback(params) { }
-
-let sliderScrollitems = document.querySelectorAll('._swiper_scroll');
-if (sliderScrollitems.length > 0) {
-	for (let index = 0; index < sliderScrollitems.length; index++) {
-		const sliderScrollitem = sliderScrollitems[index];
-		const sliderScrollBar = sliderScrollitem.querySelectorAll('.swiper-scrollbar');
-		const sliderScroll = new Swiper(sliderScrollitem, {
-			observer: true,
-			observeParents: true,
-			direction: 'vertical',
-			slidesPerView: 'auto',
-			freeMode: true,
-			scrollBar: {
-				el: sliderScrollBar,
-				draggable: true,
-				snapOnRelease: false
-			},
-			mousewheel: {
-				releaseOnEdges: true,
-			},
-		});
-		sliderScroll.scrollbar.updateSize();
-	}
-}
-
-function sliders_bild_callback(params) { }
-
-//======================================================== mainslider ==========================================================
-
-/* 1-проверим существует ли класс '.mainslider__body': */
-//if (document.querySelector('.mainslider__body')) {
-//new Swiper('.mainslider__body', {
-
-
-/* Инициализируем Swiper */
-/* 1-проверим существует ли класс '.mainslider': */
-// 2-в параметры передали объект, который должен стать слайдером (теперь слайды можно листать перетаскиванием) Дополнительные настройки добавим внутри фигурных скобок
-
-if (document.querySelector('.mainslider')) {
-	let mainslider = new Swiper('.mainslider__body', {
-		observer: true,
-		observeParents: true,
-		slidesPerView: 1,
-		spaceBetween: 0,
-		// оболочка слайдера адаптирует свою высоту к высоте текущего активного слайда
-		autoHeight: true,
-		//watchOverflow: true,
-		speed: 800,
-		//loop: true, /* бесконечный слайд (для правильной работы: добавить min-width: 0; для .page__content (flex-контейнера. в котором лежит оболочка для главного слайдера .page__slider)) */
-		//loopAdditionalSlides: 5,
-		//preloadImages: false,
-		//parallax: true, // для применения это эффекта нужно добавить в html-файле к slider-main__content атрибуты: data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" ( когда слайд становится активным: контентная часть слайда движется по оси X движестя влево и проявляется(становится не прохрачной))
-		// Dotts
-		pagination: {
-			el: '.mainslider__dotts',
-			clickable: true,
-		},
-		//Arrows
-		// обратимся к конкретным кнопкам, указав в начале класс родителя:
-		/* navigation: {
-			nextEl: '.slider-main .slider-arrow--next',
-			prevEl: '.slider-main .slider-arrow--prev',
-		} */
-		on: {
-			lazyImageReady: function () {
-				ibg();
-			},
-		}
-	});
-
-	// Добавим картинки не активных слайдов точкам (3:41:29)
-	let mainsliderImages = document.querySelectorAll('.mainslider__image ');
-	let mainsliderDotts = document.querySelectorAll('.mainslider__dotts .swiper-pagination-bullet');
-
-	for (let index = 0; index < mainsliderImages.length; index++) {
-		const mainsliderImage = mainsliderImages[index].querySelector('img').getAttribute('src');
-		mainsliderDotts[index].style.backgroundImage = "url('" + mainsliderImage + "')";
-	}
-}
 
 
 

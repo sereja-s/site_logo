@@ -1,20 +1,28 @@
 .page {
 	flex: 1 1 auto;
 	padding: 175px 0 0 0;
+	@media (max-width: 959px) {
+		padding: 207px 0 0 0;
+	}
 }
 .page__container {
-	display: flex;
+	@media (min-width: 895px) {
+		display: flex;
+	}
 }
 
 .page__side {
 	position: relative;
 	z-index: 3;
 	flex: 0 0 260px;
+	@media (max-width: 894px) {
+		margin: 0 0 22px 0;
+	}
 }
 /* .page__menu {
 } */
 .menu-page {
-	background: url("../img/bg_menu.jpg") top no-repeat;
+	background: url("../img/bg_menu.jpg") top repeat;
 	position: relative;
 }
 .menu-page__header {
@@ -23,6 +31,7 @@
 	align-items: center;
 }
 .menu-page__title {
+	flex: 1 1 auto; /* позволили названию меню категорий товаров (вертикалному) растягиваться (сжиматься) на всю ширину Прижмёт значёк меню-бургер к правому краю блока */
 	color: #ffffff;
 	font-family: "UniSans";
 	font-size: 30px;
@@ -119,54 +128,78 @@
 			width: 14px;
 			height: 14px;
 			transform: translate(0px, -50%);
+			/* @media (max-width: 894px) {
+				transform: translate(0px, -50%) rotate(90deg);
+			} */
 		}
 	}
 	&._active {
 		.menu-page__submenu {
 			pointer-events: all;
 		}
+		// покажем карточку при (касании) и её выдвижение (при щелчке)
 		.submenu-page__item {
-			z-index: 2;
-			transform: translate(0, 0);
+			display: block;
+			@media (min-width: 895px) {
+				z-index: 2;
+				transform: translate(0, 0);
+			}
 		}
 		.menu-page__link {
 			background-color: #15b2c7;
+			@media (max-width: 894px) {
+				&::after {
+					transform: translate(0px, -50%) rotate(90deg);
+				}
+			}
 		}
 	}
 }
 
-/* .submenu-page {
-} */
+// Выкрасим меню в белый цвет на малых экранах:
+.submenu-page {
+	@media (max-width: 894px) {
+		background-color: #fff;
+	}
+}
+
 .page__content {
-	flex: 1 1 auto;
-	min-width: 0; /*  */
-	padding: 0 0 0 30px;
+	@media (min-width: 895px) {
+		flex: 1 1 auto;
+		min-width: 0; /* для корректной работы слайдера (и его свойства Loop в настройках JS) */
+		padding: 0 0 0 30px;
+	}
 }
 
 .menu-page__submenu {
-	width: 100%;
-	position: absolute; /* относительно всего .menu-page */
-	top: 0;
-	height: 100%;
-	left: 100%; /* Выезжающая карточка спрячется под меню */
-	overflow: hidden;
-	pointer-events: none;
+	@media (min-width: 895px) {
+		width: 100%;
+		position: absolute; /* относительно всего .menu-page */
+		top: 0;
+		height: 100%;
+		left: 100%; /* Выезжающая карточка спрячется под меню */
+		overflow: hidden;
+		pointer-events: none;
+	}
 }
 /* .submenu-page {
 } */
 
 // Разместим выезжающие карточки одна под другой:
 .submenu-page__item {
-	width: 280px;
-	border: 2px solid #098494;
-	background-color: #ffffff;
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	transition: all 0.7s ease 0s;
-	transform: translate(-100%, 0);
+	display: none;
+	@media (min-width: 895px) {
+		width: 280px;
+		border: 2px solid #098494;
+		background-color: #ffffff;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		transition: all 0.7s ease 0s;
+		transform: translate(-100%, 0);
+	}
 }
 
 .submenu-page__menu {
@@ -180,7 +213,7 @@
 	letter-spacing: 0.3px;
 	display: block; /* чтобы сработали блочные свойства для ссылок (строчных) */
 	padding: 10px 40px;
-	@media (min-width: 991px) {
+	@media (min-width: 895px) {
 		&:hover {
 			background-color: #71c7d3;
 			color: #fff;
@@ -282,6 +315,9 @@
 	position: relative;
 	z-index: 2;
 	margin: 0 0 22px 0;
+	@media (max-width: 594px) {
+		z-index: 5;
+	}
 }
 .search-page {
 	display: flex;
@@ -293,6 +329,9 @@
 	align-items: center;
 	padding: 0 14px;
 	background-color: #f3f3f3;
+	@media (max-width: 595px) {
+		padding: 0 3px;
+	}
 }
 .search-page__title {
 	display: flex;
@@ -305,6 +344,9 @@
 		border-bottom: 1px dashed;
 		&:last-child {
 			display: none;
+		}
+		@media (max-width: 595px) {
+			margin: 0 3px;
 		}
 	}
 	&::before {
@@ -356,7 +398,9 @@
 }
 
 .categories-search__row {
-	display: flex;
+	@media (min-width: 595px) {
+		display: flex;
+	}
 }
 
 .categories-search__column {
