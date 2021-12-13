@@ -486,6 +486,10 @@
   width: 100%;
 }
 
+.categories-search__row {
+  /*  на экранах меньше 595рх меню поиска по категориям расположиться в колонку */
+}
+
 .categories-search__column {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 33.333%;
@@ -1366,6 +1370,7 @@ textarea.input {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    /*  на экранах больше 595рх меню поиска по категориям расположиться в ряд */
   }
 }
 
@@ -1405,6 +1410,8 @@ textarea.input {
   }
 
   .submenu-page__item {
+    display: block;
+    /* Что бы карточки выезжали при наведении, а не просто появлялись */
     width: 280px;
     border: 2px solid #098494;
     background-color: #ffffff;
@@ -1678,10 +1685,16 @@ textarea.input {
 @media (max-width: 594px) {
   .page__search {
     z-index: 5;
+    /* чтобы не проявлялись точки слайдера при открытии меню поиска на малых экранах */
   }
 }
 
 @media (max-width: 425px) {
+  .content-mainslider__title {
+    font-size: 30px;
+    line-height: 27px;
+  }
+
   .contacts-header {
     -webkit-box-align: end;
         -ms-flex-align: end;
@@ -1730,6 +1743,13 @@ textarea.input {
     -webkit-transform: translateY(37%);
         -ms-transform: translateY(37%);
             transform: translateY(37%);
+  }
+}
+
+@media (max-width: 350px) {
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 1px);
   }
 }
 

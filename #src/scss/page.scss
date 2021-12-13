@@ -147,6 +147,7 @@
 		}
 		.menu-page__link {
 			background-color: #15b2c7;
+			// повернём стрелочки вниз (при показе карточки)
 			@media (max-width: 894px) {
 				&::after {
 					transform: translate(0px, -50%) rotate(90deg);
@@ -189,6 +190,7 @@
 .submenu-page__item {
 	display: none;
 	@media (min-width: 895px) {
+		display: block; /* Что бы карточки выезжали при наведении, а не просто появлялись */
 		width: 280px;
 		border: 2px solid #098494;
 		background-color: #ffffff;
@@ -316,13 +318,14 @@
 	z-index: 2;
 	margin: 0 0 22px 0;
 	@media (max-width: 594px) {
-		z-index: 5;
+		z-index: 5; /* чтобы не проявлялись точки слайдера при открытии меню поиска на малых экранах */
 	}
 }
 .search-page {
 	display: flex;
 	position: relative;
 }
+// Блок (контейнер) в строке поиска с иконкой, текстом, стрелочкой, выпадающим меню поиска по категориям
 .search-page__select {
 	cursor: pointer;
 	display: flex;
@@ -399,8 +402,9 @@
 
 .categories-search__row {
 	@media (min-width: 595px) {
-		display: flex;
+		display: flex; /*  на экранах больше 595рх меню поиска по категориям расположиться в ряд */
 	}
+	/*  на экранах меньше 595рх меню поиска по категориям расположиться в колонку */
 }
 
 .categories-search__column {

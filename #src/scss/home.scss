@@ -23,6 +23,10 @@
 	text-transform: uppercase;
 	line-height: 43px;
 	margin: 0 0 50px 0;
+	@media (max-width: 425px) {
+		font-size: 30px;
+		line-height: 27px;
+	}
 	span {
 		display: block; /* текст расположится в столбик */
 		color: #f68038;
@@ -140,5 +144,12 @@
 		&::after {
 			opacity: 1;
 		}
+	}
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+	@media (max-width: 350px) {
+		margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 1px);
 	}
 }
