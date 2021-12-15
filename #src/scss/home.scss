@@ -153,3 +153,47 @@
 		margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 1px);
 	}
 }
+
+//==============================================Слайдер с популярныи товарами (3-8:07)===============================================
+
+.page__products {
+}
+.products-slider {
+}
+.products-slider__header {
+	display: flex;
+	margin: 0 0 30px 0;
+}
+.products-slider__title {
+	flex: 1 1 auto;
+	color: #dadada;
+	font-family: "UniSans";
+	font-weight: 900;
+	font-size: 30px;
+	text-transform: uppercase;
+	letter-spacing: 0.75px;
+}
+.products-slider__control {
+}
+.products-slider__items {
+}
+
+// Строим сетку с товарами внутри слайдера с популярными товарами:
+.items-products {
+	display: flex;
+	margin: 0 -15px;
+}
+.items-products__column {
+	flex: 0 1 33.333%;
+	padding: 0 15px;
+}
+
+// Дополнительные свойства для карточки с товаром в этом блоке:
+.item-product {
+	border: 1px solid #f5f5f5;
+}
+.item-product__title {
+	span {
+		font-weight: 900;
+	}
+}

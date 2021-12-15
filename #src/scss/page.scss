@@ -225,6 +225,9 @@
 }
 .submenu-page__product {
 	padding: 0 15px;
+	.item-product {
+		border: 0;
+	}
 }
 .item-product {
 	padding: 15px;
@@ -294,7 +297,7 @@
 	&::after {
 		font-size: 14px;
 	}
-	display: none;
+	/* display: none; */
 }
 
 .item-product__add {

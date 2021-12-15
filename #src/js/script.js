@@ -427,7 +427,39 @@ if (document.querySelector('.mainslider')) {
 	}
 }
 
-//==================================================================================================================================
+//======================================================= products-slider ==========================================================
+if (document.querySelector('.products-slider')) {
+	let productsSlider = new Swiper('.products-slider__item', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		// оболочка слайдера адаптирует свою высоту к высоте текущего активного слайда
+		autoHeight: true,
+		//watchOverflow: true,
+		speed: 800,
+		//loop: true, /* бесконечный слайд (для правильной работы: добавить min-width: 0; для .page__content (flex-контейнера. в котором лежит оболочка для главного слайдера .page__slider)) */
+		//loopAdditionalSlides: 5,
+		//preloadImages: false,
+		//parallax: true, // для применения это эффекта нужно добавить в html-файле к slider-main__content атрибуты: data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" ( когда слайд становится активным: контентная часть слайда движется по оси X движестя влево и проявляется(становится не прохрачной))
+		// Dotts
+		/* pagination: {
+			el: '.mainslider__dotts',
+			clickable: true,
+		}, */
+		//Arrows
+		// обратимся к конкретным кнопкам, указав в начале класс родителя:
+		navigation: {
+			nextEl: '.products-slider__arrow--next',
+			prevEl: '.products-slider__arrow--prev',
+		},
+		on: {
+			lazyImageReady: function () {
+				ibg();
+			},
+		}
+	});
+}
 
 //==================================================================================================================================
 "use strict"
