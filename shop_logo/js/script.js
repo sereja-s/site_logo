@@ -443,10 +443,10 @@ if (document.querySelector('.products-slider')) {
 		//preloadImages: false,
 		//parallax: true, // для применения это эффекта нужно добавить в html-файле к slider-main__content атрибуты: data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" ( когда слайд становится активным: контентная часть слайда движется по оси X движестя влево и проявляется(становится не прохрачной))
 		// Dotts
-		/* pagination: {
-			el: '.mainslider__dotts',
-			clickable: true,
-		}, */
+		pagination: {
+			el: '.products-slider__info',
+			type: 'fraction'
+		},
 		//Arrows
 		// обратимся к конкретным кнопкам, указав в начале класс родителя:
 		navigation: {

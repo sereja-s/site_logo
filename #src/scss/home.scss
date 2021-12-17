@@ -1,5 +1,8 @@
 .page__slider {
 	margin: 0 0 65px 0;
+	@media (max-width: 595px) {
+		margin: 0 0 45px 0;
+	}
 }
 /* .mainslider {
 } */
@@ -157,12 +160,16 @@
 //==============================================Слайдер с популярныи товарами (3-8:07)===============================================
 
 .page__products {
+	margin: 0 0 50px 0;
 }
 .products-slider {
+	margin: 0 0 20px 0;
 }
 .products-slider__header {
-	display: flex;
 	margin: 0 0 30px 0;
+	@media (min-width: 425px) {
+		display: flex;
+	}
 }
 .products-slider__title {
 	flex: 1 1 auto;
@@ -172,28 +179,193 @@
 	font-size: 30px;
 	text-transform: uppercase;
 	letter-spacing: 0.75px;
+	@media (max-width: 425px) {
+		margin-bottom: 20px;
+	}
 }
-.products-slider__control {
-}
-.products-slider__items {
-}
+/* .products-slider__control {
+} */
+/* .products-slider__items {
+	
+} */
 
-// Строим сетку с товарами внутри слайдера с популярными товарами:
+/* // Строим сетку с товарами внутри слайдера с популярными товарами:
 .items-products {
 	display: flex;
 	margin: 0 -15px;
+	flex-wrap: wrap;
 }
 .items-products__column {
 	flex: 0 1 33.333%;
 	padding: 0 15px;
-}
+	margin: 0 0 30px 0;
+} */
 
 // Дополнительные свойства для карточки с товаром в этом блоке:
-.item-product {
+/* .item-product {
 	border: 1px solid #f5f5f5;
-}
-.item-product__title {
+	overflow: hidden;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	@media (min-width: 991px) {
+		&:hover {
+			.item-product__hover {
+				transform: translate(0px, 0px);
+			}
+		}
+	}
+} */
+
+/* .item-product__body {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+} */
+/* .item-product__title {
+	flex: 1 1 auto;
 	span {
+		display: block;
 		font-weight: 900;
+	}
+} */
+
+// Карточка товара при наведении (3-27:27):
+
+/* .item-product__hover {
+	// расположим карточку при наведении над карточкой товара
+	position: absolute; /* относительно карточки товара т.е. .item-product:  position: relative; */
+//width: 100%;
+//height: 100%;
+//top: 0;
+//left: 0;
+// скроем карточку пока нет наведения и покажем при наведении на .item-product:
+/* opacity: 0;
+	visibility: hidden; */
+//transition: transform 1s ease 0s;
+//transform: translate(0, -100%);
+//} */
+
+/* .hover-item-product {
+	border: 5px solid #f68038;
+	background-color: rgba(0, 0, 0, 0.74);
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	color: #fff;
+} */
+/* .hover-item-product__title {
+	font-size: 16px;
+	color: #c2c2c2;
+	font-weight: 300;
+	margin: 0 0 25px 0;
+	span {
+		display: block;
+		color: #ffffff;
+		font-weight: 900;
+		margin: 0 0 5px 0;
+	}
+} */
+/* .hover-item-product__options {
+	flex: 1 1 auto;
+} */
+/* .options-item-product {
+} */
+/* .options-item-product__item {
+	margin: 0 0 10px 0;
+} */
+/* .options-item-product__label {
+	margin: 0 0 3px 0;
+} */
+/* .options-item-product__value {
+	color: #f68038;
+	font-weight: 900;
+} */
+/* .hover-item-product__cart {
+	background: url("../img/icons/home/cart-orange.png") 0 0 no-repeat;
+	width: 64px;
+	height: 64px;
+	margin: 0 auto 25px auto; /* hасположили иконку по центру карточки */
+//} */
+/* .hover-item-product__footer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+} */
+/* .hover-item-product__old-price {
+	flex: 1 1 100%;
+	text-align: right;
+	color: #999999;
+	font-size: 18px;
+	font-weight: 300;
+	margin: 0 0 10px 0;
+	text-decoration: line-through;
+	&::after {
+		font-size: 14px;
+	}
+} */
+
+/* значёк: В наличии */
+/* .hover-item-product__stock {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 10px;
+	line-height: 16px;
+	height: 21px;
+	color: #f68038;
+	font-weight: 400;
+	border-radius: 15px;
+	background-color: #ffffff;
+} */
+/* .hover-item-product__price {
+	font-size: 24px;
+	font-weight: 900;
+	&::after {
+		font-size: 18px;
+	}
+} */
+
+// Элементы контроля управления слайдером популярных товаров:
+
+.products-slider__control {
+	display: flex;
+	align-items: center;
+}
+.products-slider__arrow {
+	background: url("../img/icons/home/sl_arrow_right.png") 0 0 no-repeat;
+	width: 59px;
+	height: 32px;
+	cursor: pointer;
+	@media (min-width: 991px) {
+		&:hover {
+			background: url("../img/icons/home/sl_arrow_left.png") 0 0 no-repeat;
+		}
+	}
+}
+.products-slider__arrow--prev {
+	transform: rotate(-180deg);
+	@media (min-width: 991px) {
+		&:hover {
+			transform: rotate(0deg);
+		}
+	}
+}
+.products-slider__info {
+	padding: 0 20px;
+	color: #999999;
+	font-weight: 500;
+	.swiper-pagination-current {
+		color: #333333;
+		font-size: 30px;
+		font-weight: 900;
+	}
+}
+.products-slider__arrow--next {
+	@media (min-width: 991px) {
+		&:hover {
+			transform: rotate(-180deg);
+		}
 	}
 }

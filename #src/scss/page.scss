@@ -229,16 +229,16 @@
 		border: 0;
 	}
 }
-.item-product {
+/* .item-product {
 	padding: 15px;
 	position: relative;
-}
-.item-product__labels {
+} */
+/* .item-product__labels {
 	position: absolute;
 	left: 15px;
 	top: 15px;
-}
-.item-product__label {
+} */
+/* .item-product__label {
 	margin: 0 0 5px 0;
 	padding: 0 15px;
 	text-transform: uppercase;
@@ -250,9 +250,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-.item-product__image {
-	height: 195px;
+} */
+/* .item-product__image {
+	height: 260px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -260,14 +260,14 @@
 	// расположем внутри картинку:
 	img {
 		max-width: 100%;
-		max-height: 175px;
+		max-height: 240px;
 	}
-}
+} */
 
-.item-product__body {
+/* .item-product__body {
 	padding: 0 10px;
-}
-.item-product__title {
+} */
+/* .item-product__title {
 	color: #36949f;
 	font-size: 16px;
 	font-weight: 300;
@@ -279,33 +279,33 @@
 			text-decoration: underline;
 		}
 	}
-}
-.item-product__footer {
+} */
+/* .item-product__footer {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-}
-.item-product__old-price {
-	flex: 1 1 100%; /* flex-элемент разместится на всю ширину */
-	text-align: right;
-	color: #999999;
-	font-size: 18px;
-	font-weight: 300;
-	text-decoration: line-through;
-	// уменьшим размер значка-рубль:
-	&::after {
-		font-size: 14px;
-	}
-	/* display: none; */
-}
+} */
+//.item-product__old-price {
+//flex: 1 1 100%; /* flex-элемент разместится на всю ширину */
+//text-align: right;
+//color: #999999;
+//font-size: 18px;
+//font-weight: 300;
+//text-decoration: line-through;
+// уменьшим размер значка-рубль:
+//&::after {
+//font-size: 14px;
+//}
+/* display: none; */
+//}
 
-.item-product__add {
+/* .item-product__add {
 	width: 48px;
 	height: 48px;
 	background: url("../img/icons/page/cart_gray.png") 0 0 no-repeat;
-}
-.item-product__price {
+} */
+/* .item-product__price {
 	color: #333333;
 	font-size: 24px;
 	font-weight: 900;
@@ -313,7 +313,7 @@
 	&::after {
 		font-size: 18px;
 	}
-}
+} */
 
 //==================================================================================================================================
 
