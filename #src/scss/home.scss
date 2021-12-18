@@ -160,11 +160,10 @@
 //==============================================Слайдер с популярныи товарами (3-8:07)===============================================
 
 .page__products {
-	margin: 0 0 50px 0;
-}
-.products-slider {
 	margin: 0 0 20px 0;
 }
+/* .products-slider {	
+} */
 .products-slider__header {
 	margin: 0 0 30px 0;
 	@media (min-width: 425px) {
@@ -333,7 +332,7 @@
 	display: flex;
 	align-items: center;
 }
-.products-slider__arrow {
+/* .products-slider__arrow {
 	background: url("../img/icons/home/sl_arrow_right.png") 0 0 no-repeat;
 	width: 59px;
 	height: 32px;
@@ -343,15 +342,15 @@
 			background: url("../img/icons/home/sl_arrow_left.png") 0 0 no-repeat;
 		}
 	}
-}
-.products-slider__arrow--prev {
+} */
+/* .products-slider__arrow--prev {
 	transform: rotate(-180deg);
 	@media (min-width: 991px) {
 		&:hover {
 			transform: rotate(0deg);
 		}
 	}
-}
+} */
 .products-slider__info {
 	padding: 0 20px;
 	color: #999999;
@@ -362,10 +361,141 @@
 		font-weight: 900;
 	}
 }
-.products-slider__arrow--next {
+/* .products-slider__arrow--next {
 	@media (min-width: 991px) {
 		&:hover {
 			transform: rotate(-180deg);
 		}
 	}
+} */
+
+//==================================================================================================================================
+
+.page__brands {
+	margin: 0 0 32px 0;
+}
+.brands-slider {
+	border-top: 3px dashed #dadada;
+	border-bottom: 3px dashed #dadada;
+	padding: 25px 0;
+}
+.brands-slider__container {
+	position: relative;
+}
+
+.brands-slider__body {
+	padding: 0 22px;
+}
+
+.brands-slider__slide {
+	// разместим контент (логотипы по центру):
+	//text-align: center; ( убрали т.к. отключили autoHeight: true в JS)
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// сделаем поля для слайдов:
+	padding: 0 10px;
+	img {
+		// сделаем картинки бесцветными:
+		@extend %graystyle;
+		max-width: 100%;
+		cursor: pointer;
+		// при наведении раскрасим картинки:
+		&:hover {
+			@extend %graystyleoff;
+		}
+	}
+	@media (max-width: 991px) {
+		img {
+			filter: grayscale(0);
+		}
+	}
+}
+/* .brands-slider__arrows {
+} */
+
+// Расположем стрелки по сторонам и по центру блока:
+.brands-slider__arrow {
+	position: absolute;
+	top: 50%;
+	margin: -15px 0 0 0;
+	z-index: 2;
+}
+.brands-slider__arrow--prev {
+	left: 0;
+}
+.brands-slider__arrow--next {
+	right: 0;
+}
+
+//===================================================================================================================================
+
+.page__text {
+}
+.text-block {
+}
+.text-block__container {
+}
+
+.text-block__body {
+	padding: 45px 30px;
+	background-color: rgb(77, 157, 248);
+}
+.text-block__title {
+	color: #8ceaf7;
+	font-family: "UniSans";
+	font-size: 30px;
+	text-transform: uppercase;
+	letter-spacing: 0.75px;
+	margin: 0 0 28px 0;
+	font-weight: 700;
+}
+.text-block__row {
+	display: flex;
+	margin: 0 -30px;
+}
+.text-block__column {
+	padding: 0 30px;
+	flex: 0 1 50%;
+	color: #ffffff;
+	position: relative;
+	p {
+		font-size: 16px;
+		line-height: 20px;
+		letter-spacing: 0.3px;
+		margin: 0 0 20px 0;
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+.text-block__label {
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 18px;
+	margin: 0 0 15px 0;
+}
+.text-block__list {
+	li {
+		font-size: 16px;
+		line-height: 20px;
+		letter-spacing: 0.3px;
+		margin: 0 0 10px 0;
+		&:last-child {
+			margin: 0;
+		}
+		&::before {
+			content: "";
+			margin: 0 17px 0 7px;
+			display: inline-block;
+			background: url("../img/icons/home/love-letter.png") left no-repeat;
+			width: 32px;
+			height: 32px;
+		}
+	}
+}
+.text-block__image {
+	position: absolute;
+	right: -12px;
+	bottom: -277px;
 }

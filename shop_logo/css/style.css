@@ -588,10 +588,22 @@
   line-height: 18px;
 }
 
+/* .page__reviews-side {
+} */
+
+/* .reviews-side {
+} */
+
 .reviews-side__title {
   display: inline-block;
   margin: 0 0 1em 0;
 }
+
+/* .side-title {
+} */
+
+/* .reviews-side__items {
+} */
 
 .reviews-side__item {
   display: block;
@@ -831,12 +843,11 @@
 }
 
 .page__products {
-  margin: 0 0 50px 0;
-}
-
-.products-slider {
   margin: 0 0 20px 0;
 }
+
+/* .products-slider {	
+} */
 
 .products-slider__header {
   margin: 0 0 30px 0;
@@ -1009,20 +1020,26 @@
           align-items: center;
 }
 
-.no-webp .products-slider__arrow{
-  background: url("../img/icons/home/sl_arrow_right.png") 0 0 no-repeat; }
+/* .products-slider__arrow {
+	background: url("../img/icons/home/sl_arrow_right.png") 0 0 no-repeat;
+	width: 59px;
+	height: 32px;
+	cursor: pointer;
+	@media (min-width: 991px) {
+		&:hover {
+			background: url("../img/icons/home/sl_arrow_left.png") 0 0 no-repeat;
+		}
+	}
+} */
 
-.products-slider__arrow {
-  width: 59px;
-  height: 32px;
-  cursor: pointer;
-}
-
-.products-slider__arrow--prev {
-  -webkit-transform: rotate(-180deg);
-      -ms-transform: rotate(-180deg);
-          transform: rotate(-180deg);
-}
+/* .products-slider__arrow--prev {
+	transform: rotate(-180deg);
+	@media (min-width: 991px) {
+		&:hover {
+			transform: rotate(0deg);
+		}
+	}
+} */
 
 .products-slider__info {
   padding: 0 20px;
@@ -1034,6 +1051,145 @@
   color: #333333;
   font-size: 30px;
   font-weight: 900;
+}
+
+/* .products-slider__arrow--next {
+	@media (min-width: 991px) {
+		&:hover {
+			transform: rotate(-180deg);
+		}
+	}
+} */
+
+.page__brands {
+  margin: 0 0 32px 0;
+}
+
+.brands-slider {
+  border-top: 3px dashed #dadada;
+  border-bottom: 3px dashed #dadada;
+  padding: 25px 0;
+}
+
+.brands-slider__container {
+  position: relative;
+}
+
+.brands-slider__body {
+  padding: 0 22px;
+}
+
+.brands-slider__slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+}
+
+.brands-slider__slide img {
+  max-width: 100%;
+  cursor: pointer;
+}
+
+/* .brands-slider__arrows {
+} */
+
+.brands-slider__arrow {
+  position: absolute;
+  top: 50%;
+  margin: -15px 0 0 0;
+  z-index: 2;
+}
+
+.brands-slider__arrow--prev {
+  left: 0;
+}
+
+.brands-slider__arrow--next {
+  right: 0;
+}
+
+.text-block__body {
+  padding: 45px 30px;
+  background-color: #4d9df8;
+}
+
+.text-block__title {
+  color: #8ceaf7;
+  font-family: "UniSans";
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  margin: 0 0 28px 0;
+  font-weight: 700;
+}
+
+.text-block__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -30px;
+}
+
+.text-block__column {
+  padding: 0 30px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  color: #ffffff;
+  position: relative;
+}
+
+.text-block__column p {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 0 0 20px 0;
+}
+
+.text-block__column p:last-child {
+  margin: 0;
+}
+
+.text-block__label {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 18px;
+  margin: 0 0 15px 0;
+}
+
+.text-block__list li {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 0 0 10px 0;
+}
+
+.text-block__list li:last-child {
+  margin: 0;
+}
+
+.no-webp .text-block__list li::before{
+  background: url("../img/icons/home/love-letter.png") left no-repeat; }
+
+.text-block__list li::before {
+  content: "";
+  margin: 0 17px 0 7px;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.text-block__image {
+  position: absolute;
+  right: -12px;
+  bottom: -277px;
 }
 
 /* учли поля (что-бы контент не прилипал к краям экрана) */
@@ -1300,6 +1456,19 @@ textarea.input {
 .checkbox a {
   color: #fff;
   text-decoration: underline;
+}
+
+.brands-slider__slide img {
+  -webkit-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.brands-slider__slide img:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 
 /* 12 */
@@ -1682,6 +1851,21 @@ textarea.input {
 
 .hover-item-product__price::after {
   font-size: 18px;
+}
+
+.no-webp .arrow{
+  background: url("../img/icons/home/sl_arrow_right.png") 0 0 no-repeat; }
+
+.arrow {
+  width: 59px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.arrow-prev {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
 }
 
 .no-webp .header{
@@ -2094,21 +2278,6 @@ textarea.input {
     color: #1ab9ce;
   }
 
-  .no-webp .products-slider__arrow:hover{
-    background: url("../img/icons/home/sl_arrow_left.png") 0 0 no-repeat; }
-
-  .products-slider__arrow--prev:hover {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-
-  .products-slider__arrow--next:hover {
-    -webkit-transform: rotate(-180deg);
-        -ms-transform: rotate(-180deg);
-            transform: rotate(-180deg);
-  }
-
   .checkbox a:hover {
     text-decoration: none;
   }
@@ -2121,6 +2290,21 @@ textarea.input {
 
   .item-product__title:hover {
     text-decoration: underline;
+  }
+
+  .no-webp .arrow:hover{
+    background: url("../img/icons/home/sl_arrow_left.png") 0 0 no-repeat; }
+
+  .arrow-prev:hover {
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  .arrow-next:hover {
+    -webkit-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+            transform: rotate(-180deg);
   }
 
   .menu__link:hover {
@@ -2187,15 +2371,21 @@ textarea.input {
   }
 }
 
-@media (max-width: 991px) and (max-width: 650px) {
+@media (max-width: 1024px) {
   .items-products__column {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 50%;
-            flex: 1 1 50%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 33.333%;
+            flex: 0 1 33.333%;
+    padding: 0 5px;
   }
 }
 
 @media (max-width: 991px) {
+  .brands-slider__slide img {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+  }
+
   .no-webp .header{
     background: #fff url(../img/header_bg.jpg) 0 0 no-repeat; }
 
@@ -2295,6 +2485,14 @@ textarea.input {
   }
 }
 
+@media (max-width: 991px) and (max-width: 650px) {
+  .items-products__column {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+  }
+}
+
 @media (max-width: 959px) {
   .page {
     padding: 207px 0 0 0;
@@ -2311,6 +2509,12 @@ textarea.input {
   .actions-header {
     padding-top: 15px;
   }
+
+  .info-header {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
 }
 
 @media (max-width: 894px) {
@@ -2326,13 +2530,6 @@ textarea.input {
 
   .submenu-page {
     background-color: #fff;
-  }
-
-  .items-products__column {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 33.333%;
-            flex: 0 1 33.333%;
-    padding: 0 5px;
   }
 }
 
@@ -2429,6 +2626,7 @@ textarea.input {
 
   .bottom-header__content {
     height: 58px;
+    margin-top: 20px;
   }
 
   .actions-header {
@@ -2492,11 +2690,13 @@ textarea.input {
 
 .webp .content-mainslider__button span{ background: url(../img/icons/page/btn_arrow.webp) right no-repeat; }
 
-.webp .products-slider__arrow{ background: url(../img/icons/home/sl_arrow_right.webp) 0 0 no-repeat; }
+.webp .text-block__list li::before{ background: url(../img/icons/home/love-letter.webp) left no-repeat; }
 
 .webp .item-product__add{ background: url(../img/icons/page/cart_gray.webp) 0 0 no-repeat; }
 
 .webp .hover-item-product__cart{ background: url(../img/icons/home/cart-orange.webp) 0 0 no-repeat; }
+
+.webp .arrow{ background: url(../img/icons/home/sl_arrow_right.webp) 0 0 no-repeat; }
 
 .webp .header{ background: #fff url(../img/header_bg.webp) top no-repeat; }
 
@@ -2516,7 +2716,7 @@ textarea.input {
 
 @media (min-width: 991px){
 
-  .webp .products-slider__arrow:hover{ background: url(../img/icons/home/sl_arrow_left.webp) 0 0 no-repeat; }
+  .webp .arrow:hover{ background: url(../img/icons/home/sl_arrow_left.webp) 0 0 no-repeat; }
 }
 
 @media (max-width: 991px){

@@ -376,11 +376,6 @@ function sliders_bild_callback(params) { }
 
 //======================================================== mainslider ==========================================================
 
-/* 1-проверим существует ли класс '.mainslider__body': */
-//if (document.querySelector('.mainslider__body')) {
-//new Swiper('.mainslider__body', {
-
-
 /* Инициализируем Swiper */
 /* 1-проверим существует ли класс '.mainslider': */
 // 2-в параметры передали объект, который должен стать слайдером (теперь слайды можно листать перетаскиванием) Дополнительные настройки добавим внутри фигурных скобок
@@ -461,11 +456,49 @@ if (document.querySelector('.products-slider')) {
 	});
 }
 
-//==================================================================================================================================
-"use strict"
+//========================================================== brands-slider ========================================================
 
-
-
+if (document.querySelector('.brands-slider')) {
+	let brandsSlider = new Swiper('.brands-slider__body', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 3,
+		spaceBetween: 0,
+		// оболочка слайдера адаптирует свою высоту к высоте текущего активного слайда
+		//autoHeight: true,
+		//watchOverflow: true,
+		speed: 800,
+		loop: true, /* бесконечный слайд (для правильной работы: добавить min-width: 0; для .page__content (flex-контейнера. в котором лежит оболочка для главного слайдера .page__slider)) */
+		//loopAdditionalSlides: 5,
+		//preloadImages: false,
+		//parallax: true, // для применения это эффекта нужно добавить в html-файле к slider-main__content атрибуты: data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" ( когда слайд становится активным: контентная часть слайда движется по оси X движестя влево и проявляется(становится не прохрачной))
+		// Dotts
+		/* pagination: {
+			el: '.products-slider__info',
+			type: 'fraction'
+		}, */
+		//Arrows
+		// обратимся к конкретным кнопкам, указав в начале класс родителя:
+		navigation: {
+			nextEl: '.brands-slider__arrow--next',
+			prevEl: '.brands-slider__arrow--prev',
+		},
+		breakpoints: {
+			320: {
+				slidesPerView: 1,
+				autoHeight: true,
+			},
+			595: {
+				slidesPerView: 3,
+			},
+		},
+		on: {
+			lazyImageReady: function () {
+				ibg();
+			},
+		}
+	});
+}
 
 //==================================================================================================================================
 

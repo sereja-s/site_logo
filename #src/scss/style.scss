@@ -222,6 +222,17 @@ textarea.input {
 	}
 }
 
+//========================================= Бесцветные картинки ==================================================================
+
+%graystyle {
+	transition: all 0.7s ease 0s;
+	filter: grayscale(1);
+}
+
+%graystyleoff {
+	filter: grayscale(0);
+}
+
 //========================================== Элементы управления слайдером Swiper: ================================================
 
 /* 12 */
@@ -357,7 +368,7 @@ textarea.input {
 	@media (max-width: 991px) and (max-width: 650px) {
 		flex: 1 1 50%;
 	}
-	@media (max-width: 894px) {
+	@media (max-width: 1024px) {
 		flex: 0 1 33.333%;
 		padding: 0 5px;
 	}
@@ -584,6 +595,35 @@ textarea.input {
 	font-weight: 900;
 	&::after {
 		font-size: 18px;
+	}
+}
+
+//====================================================== Стрелочки слайдеров (3-1:22)=================================================
+
+.arrow {
+	background: url("../img/icons/home/sl_arrow_right.png") 0 0 no-repeat;
+	width: 59px;
+	height: 32px;
+	cursor: pointer;
+	@media (min-width: 991px) {
+		&:hover {
+			background: url("../img/icons/home/sl_arrow_left.png") 0 0 no-repeat;
+		}
+	}
+	&-prev {
+		transform: rotate(-180deg);
+		@media (min-width: 991px) {
+			&:hover {
+				transform: rotate(0deg);
+			}
+		}
+	}
+	&-next {
+		@media (min-width: 991px) {
+			&:hover {
+				transform: rotate(-180deg);
+			}
+		}
 	}
 }
 

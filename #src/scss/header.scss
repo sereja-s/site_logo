@@ -261,6 +261,7 @@
 	}
 	@media (max-width: 425px) {
 		height: 58px;
+		margin-top: 20px;
 	}
 }
 .bottom-header__column {
@@ -332,6 +333,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	@media (max-width: 959px) {
+		align-items: flex-end;
+	}
 }
 .info-header__column {
 	padding: 0 54px 0 0;
