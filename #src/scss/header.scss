@@ -256,17 +256,22 @@
 	align-items: center;
 	justify-content: space-between;
 	@media (max-width: 959px) {
-		height: 100px;
+		height: 111px;
 		flex-direction: column;
 	}
 	@media (max-width: 425px) {
-		height: 58px;
+		height: 90px;
 		margin-top: 20px;
 	}
 }
 .bottom-header__column {
 	// установим ширину колонок 50% и уменьшив на половину размера логотипа (блок станет под логотипом) и разделим блоки по сторонам, установив для .bottom-header__content { justify-content: space-between; }
 	flex: 0 1 calc(50% - 95px);
+	@media (max-width: 959px) {
+		&:last-child {
+			margin-bottom: 35px;
+		}
+	}
 }
 /* .bottom-header__actions {
 } */

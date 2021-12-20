@@ -35,9 +35,9 @@ $dackgrayColor: #616161;
 @import "null";
 
 body {
-	color: $mainColor;
+	color: #000;
 	font-family: $fontFamily;
-	font-size: $fontSize;
+	font-size: 14px;
 	&._lock {
 		overflow: hidden;
 	}
@@ -59,6 +59,10 @@ body {
 	max-width: $maxWidthContainer + px;
 	margin: 0 auto;
 	padding: 0 20px; // поля, что бы содержимое контейнера не прилипало к краям
+	overflow-x: hidden;
+	@media (max-width: 768px) {
+		padding: 0 10px;
+	}
 
 	// @media (max-width: $md1+px) {
 	// 	max-width: 970px;

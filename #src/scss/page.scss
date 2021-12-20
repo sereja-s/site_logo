@@ -166,6 +166,7 @@
 }
 
 .page__content {
+	margin: 0 0 30px 0;
 	@media (min-width: 895px) {
 		flex: 1 1 auto;
 		min-width: 0; /* для корректной работы слайдера (и его свойства Loop в настройках JS) */
@@ -602,5 +603,74 @@
 		top: 14px;
 		color: #dadada;
 		line-height: 1;
+	}
+}
+
+//===================================================================================================================================
+
+/* .page__info-menu {
+} */
+.info-menu {
+	border-top: 3px dashed #dadada;
+	border-bottom: 3px dashed #dadada;
+	padding: 10px 0;
+}
+/* .info-menu__container {
+} */
+
+.info-menu__body {
+	display: inline-block;
+	@media (max-width: 680px) {
+		display: flex;
+	}
+}
+.info-menu__line {
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #b0b0b0;
+	&:last-child {
+		border: 0;
+	}
+	@media (max-width: 680px) {
+		display: block;
+		flex: 0 1 50%;
+		border: 0;
+	}
+}
+.info-menu__label {
+	color: #333333;
+	font-size: 18px;
+	font-weight: 900;
+	margin: 0 35px 0 0;
+	@media (max-width: 680px) {
+		margin: 0 0 15px 0;
+	}
+}
+.info-menu__list {
+	@media (min-width: 681px) {
+		display: flex;
+		align-items: center;
+	}
+	li {
+		margin: 0 30px 0 0;
+		@media (max-width: 680px) {
+			margin: 0 0 15px 0;
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+}
+.info-menu__link {
+	color: #0884f8;
+	background-color: rgba($color: #ffffff, $alpha: 1);
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 500;
+	@media (min-width: 991px) {
+		&:hover {
+			color: #333333;
+		}
 	}
 }
