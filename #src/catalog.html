@@ -2,7 +2,7 @@
 <html lang="ru">
 
 @@include('_head.html', {
-"title": "ShopLogo-главная"
+"title": "ShopLogo-каталог"
 })
 
 <body>
@@ -217,57 +217,18 @@
 						</div>
 
 					</nav>
-					<!-- динамически перебросим блок page__content-side (при адаптиве) в конец блока page__content -->
-					<div data-da=".page__content, 894, last" class="page__content-side">
-						<div class="page__news-side news-side">
-							<a href="#" class="news-side__title side-title">Новости</a>
-							<div class="news-side__items">
-								<div class="news-side__item">
-									<a href="#" class="news-side__label">Хочется праздника</a>
-									<div class="news-side__body">
-										<div class="news-side__data"><span>14</span>дек</div>
-										<div class="news-side__text">Cнега и радости,
-											Чтоб за окном бушевала метель,
-											Спрятаны дома подарки и сладости,
-											Мятные пряники и карамель.</div>
-									</div>
+					<div class="filter">
+						<div class="filter__title">Фильтр товаров</div>
+						<div class="filter__body">
+							<div class="filter__section section-filter">
+								<div class="section-filter__title">Цена (руб.):</div>
+								<div class="section-filter__body">
+									<div class="price-filter"></div>
 								</div>
-								<div class="news-side__item">
-									<a href="#" class="news-side__label">Cнижение цен на игровые площадки</a>
-									<div class="news-side__body">
-										<div class="news-side__data"><span>14</span>дек</div>
-										<div class="news-side__text">Уважаемые покупатели! Мы раюы сообщить вам о снижении цен
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="page__reviews-side reviews-side">
-							<a href="#" class="reviews-side__title side-title">Отзывы</a>
-							<div class="reviews-side__items">
-								<a href="#" class="reviews-side__item">
-									<div class="reviews-side__header">
-										<div class="reviews-side__user">Алеся Синеглазая</div>
-										<div class="reviews-side__data">14.12.2021</div>
-									</div>
-									<div class="reviews-side__body">Ёлка наряжена ватой, игрушками,
-										Шишками, сотней красивых огней.
-										Хочется утром найти под подушками
-										Маленький ключик от тайных дверей.</div>
-								</a>
-								<a href="#" class="reviews-side__item">
-									<div class="reviews-side__header">
-										<div class="reviews-side__user">Алеся Синеглазая</div>
-										<div class="reviews-side__data">14.12.2021</div>
-									</div>
-									<div class="reviews-side__body">Бабушка вяжет мне свитер с оленями,
-										Чтоб не замёрзла холодной зимой,
-										Хочется сказок, навеянных временем,
-										Бабушка знает их все до одной.</div>
-								</a>
 							</div>
 						</div>
 					</div>
+
 				</aside>
 				<!-- flex-контейнер -->
 				<div class="page__content">
@@ -1476,116 +1437,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- Слайдер с брендами (3-19:00) -->
-			<div class="page__brands brands-slider">
-				<div class="brands-slider__container container">
-					<div class="brands-slider__body swiper">
 
-						<div class="brands-slider__slide">
-							<img src="img/brands/logo-1.png" alt="image">
-						</div>
-						<div class="brands-slider__slide">
-							<img src="img/brands/logo-2.png" alt="image">
-						</div>
-						<div class="brands-slider__slide">
-							<img src="img/brands/logo-3.png" alt="image">
-						</div>
-						<div class="brands-slider__slide">
-							<img src="img/brands/logo-4.png" alt="image">
-						</div>
-						<div class="brands-slider__slide">
-							<img src="img/brands/logo-5.png" alt="image">
-						</div>
-						<div class="brands-slider__slide">
-							<img src="img/brands/logo-6.png" alt="image">
-						</div>
-
-					</div>
-					<div class="brands-slider__arrows">
-						<div class="brands-slider__arrow brands-slider__arrow--prev arrow arrow-prev"></div>
-						<div class="brands-slider__arrow brands-slider__arrow--next arrow arrow-next"></div>
-					</div>
-				</div>
-			</div>
-			<section class="page__text text-block">
-				<div class="text-block__container container">
-					<div class="text-block__body">
-						<h1 class="text-block__title">Зто интересно</h1>
-						<div class="text-block__row">
-							<div class="text-block__column">
-								<p>Сайт сделан в рамках развития проекта: "Сайт построен" Руководитель проекта Суворов С.В.</p>
-								<p>Стихи | Алеся Синеглазая<br>
-									Как хочется нужного, доброго, нежного,<br>
-									Субботнего завтрака, счастья безбрежного,<br>
-									Уютных минут, неподдельной душевности,<br>
-									Всего, что спасает людей в повседневности.<br><br>
-
-									Как хочется полным спокойствия вечером<br>
-									К родному плечу прислониться доверчиво,<br>
-									Уйти будто в сказку в объятия крепкие,<br>
-									И дом сделать самой незыблемой крепостью,<br><br>
-
-									Как хочется выдержать, выстоять, справиться,<br>
-									В назначенный час как пружина расправиться,<br>
-									Однажды собравшись с последними силами,<br>
-									Причалить корабликом к берегу милому...<br><br>
-
-									Как хочется солнца с его оживлённостью,<br>
-									Беспечной воздушности, вечной влюблённости,<br>
-									У ангелов вымолить чуда обычного,<br>
-									Порхающих бабочек, поля пшеничного,<br><br>
-
-									Дышать полной грудью, пить кофе бодрящий,<br>
-									По мелким штришкам создавать настоящее,<br>
-									Не маяться тем, что не стоит внимания,<br>
-									Найти наконец-то свой путь и призвание,<br><br>
-
-									В беде обретать себе мудрых советчиков,<br>
-									Зажить бы мне, господи, по человечески...<br><br>
-
-									Алеся Синеглазая<br>
-
-									#стихи #поэзия #разноцветные_бусы #АлесяСинеглазая
-								</p>
-							</div>
-							<div class="text-block__column">
-								<h2 class="text-block__label">Алеся Синеглазая |
-									Сборник "Разноцветные бусы"</h2>
-								<ul class="text-block__list">
-									<li>Как хорошо быть чьей-то половинкой,
-										Делить беду и счастье на двоих,
-										И строить мир огромный по крупинкам
-										И не бояться нежных чувств своих.</li>
-									<li>И понимать друг друга с полувздоха,
-										Как будто вы знакомы сотни лет,
-										Как будто современная эпоха
-										Застала вас на краешках планет.</li>
-									<li>Быть вместе. Это просто.
-										Это сложно,
-										Горящей в ком-то искрой дорожить,
-										И чувствовать тепло души подкожно,
-										И каждый день судьбу благодарить.</li>
-									<li>Застанут разногласия и трудности -
-										Найдётся помириться много сил,
-										Кто от любви большой не делал глупостей,
-										Тот никогда, наверно,<br> не любил.</li>
-									<li>Нам жизнь даётся, чтобы<br> видеть звёзды
-										И воспитать в<br> согласии детей,
-										"Ты как - земля,<br> огонь, вода и воздух,
-										Ты для<br> меня важней вселенной всей".</li>
-									<li>По улицам летают<br> паутинки,
-										Всё лучшее<br> придёт само собой,<br>
-										Как хорошо бытья<br> чьей-то половинкой<br>
-										С рождения<br> обещанной<br> судьбой...</li>
-								</ul>
-								<div class="text-block__image">
-									<img src="img/girl.png" alt="image">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
 			<div class="page__info-menu info-menu">
 				<div class="info-menu__container container">
 					<div class="info-menu__body">
