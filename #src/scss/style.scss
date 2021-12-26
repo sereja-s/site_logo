@@ -11,7 +11,6 @@
 // Подключение стилей страниц:
 @import "page";
 @import "home";
-@import "catalog";
 
 // Шрифт по умолчанию
 $fontFamily: "Roboto";
@@ -137,7 +136,7 @@ body {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	padding: 0 25px;
+	padding: 0 15px;
 	@media (max-width: 595px) {
 		padding: 0 5px;
 	}
@@ -153,7 +152,17 @@ body {
 	@media (any-hover: hover) {
 		&:hover {
 			// будет работать при наведении курсором (на устройствах, оборудованных мышью)
-			background-color: #f19d69;
+			background-color: #f5b338;
+		}
+	}
+	&--grey {
+		color: #666666;
+		background-color: #e6e6e6;
+		@media (any-hover: hover) {
+			&:hover {
+				// будет работать при наведении курсором (на устройствах, оборудованных мышью)
+				background-color: #c2bebe;
+			}
 		}
 	}
 	&._fw {
@@ -192,30 +201,42 @@ textarea.input {
 		height: 0;
 		opacity: 0;
 		visibility: hidden;
-		/* &:checked + .checkbox__text::before {
-			background: #fff url("../img/icons/check.svg") center no-repeat;
-		} */
+		// нарисуем активное состояние:
+		&:checked + .checkbox__text::before {
+			border: 2px solid #009aaf; // в активном состоянии граница квадратика поменяет цвет
+			//background: #fff url("../img/icons/check.svg") center no-repeat; // в активном состоянии появится галочка
+		}
+		// в актвном состоянии нарисуем квадратик по центру:
+		&:checked + .checkbox__text::after {
+			content: "";
+			position: absolute;
+			left: 3px;
+			top: 3px;
+			width: 9px;
+			height: 9px;
+			background-color: #53b5de;
+		}
 	}
 	&__text {
 		display: inline-flex;
 		align-items: center;
 		position: relative;
-		font-size: 16px;
-		color: #ffffff;
-		letter-spacing: -0.3px;
-		line-height: calc(20 / 16);
+		font-size: 14px;
+		color: #666666;
+		//letter-spacing: -0.3px; // закомментировали что бы текст рядом с квадратиками стал виден
+		line-height: calc(15 / 12);
 		cursor: pointer;
 		&::before {
 			content: "";
 			align-self: flex-start;
 			margin: 0 14px 0 0;
-			flex: 0 0 20px;
+			flex: 0 0 15px;
 			left: 0;
 			top: 0;
-			width: 20px;
-			height: 18px;
+			width: 15px;
+			height: 15px;
 			background: #fff;
-			border: 1px solid #a7a9ac;
+			border: 2px solid #dadada;
 		}
 	}
 	a {
@@ -636,5 +657,6 @@ textarea.input {
 
 //=================================================================================================================================
 
+@import "catalog";
 @import "header";
 @import "footer";

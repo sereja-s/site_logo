@@ -219,7 +219,8 @@
 					</nav>
 					<div class="filter">
 						<div class="filter__title">Фильтр товаров</div>
-						<div class="filter__body">
+						<!-- ОБщая оболочка спойлера (добавили атрибут data-spoilers) -->
+						<div data-spoilers class="filter__body spoilers">
 							<div class="filter__section section-filter">
 								<div class="section-filter__title">Цена (руб.):</div>
 								<div class="section-filter__body">
@@ -262,14 +263,196 @@
 											</div>
 										</div>
 										<div class="compare-filter__footer">
-											<div class="compare-filter__button"><span>Сравнить</span></div>
-											<div class="compare-filter__clean"></div>
+											<a href="#" class="compare-filter__button"><span>Сравнить</span></a>
+											<a href="#" class="compare-filter__clean"></a>
 										</div>
 									</div>
 								</div>
 							</div>
+							<div class="filter__section section-filter">
+								<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
+								<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Производитель:</div>
+								<div class="section-filter__body">
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>Clear-fit</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>Diadora</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>Hasttings</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>Carbon-fitness</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>Nordic Track</span></span>
+									</label>
+								</div>
+							</div>
+							<div class="filter__section section-filter">
+								<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
+								<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Мощность двигателя:</div>
+								<div class="section-filter__body">
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>18</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>16</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>14</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>12</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>10</span></span>
+									</label>
+								</div>
+							</div>
+							<div class="filter__section section-filter">
+								<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
+								<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Размер бегового полотна:
+								</div>
+								<div class="section-filter__body">
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>50</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>40</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>30</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>20</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>10</span></span>
+									</label>
+								</div>
+							</div>
+							<div class="filter__section section-filter">
+								<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
+								<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Вес пользователя (макс.):
+								</div>
+								<div class="section-filter__body">
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>150</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>140</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>130</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>120</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>110</span></span>
+									</label>
+								</div>
+							</div>
+							<div class="filter__section section-filter">
+								<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
+								<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Скорость (макс.):
+								</div>
+								<div class="section-filter__body">
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>30</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>25</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>20</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>15</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>10</span></span>
+									</label>
+								</div>
+							</div>
+							<div class="filter__section section-filter">
+								<div class="section-filter__title ">Угол наклона:</div>
+								<div class="section-filter__body">
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>нет регулировки</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>механическая</span></span>
+									</label>
+									<label class="section-filter__checkbox checkbox">
+										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+											name="form[]">
+										<span class="checkbox__text"><span>электронная</span></span>
+									</label>
+								</div>
+							</div>
 						</div>
-
+						<div class="filter__footer">
+							<button type="submit" class="filter__btn btn">Подобрать</button>
+							<button type="reset" class="filter__btn btn btn--grey">Сбросить</button>
+						</div>
+					</div>
 				</aside>
 				<!-- flex-контейнер -->
 				<div class="page__content">

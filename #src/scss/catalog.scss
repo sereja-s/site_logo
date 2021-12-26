@@ -13,23 +13,69 @@
 } */
 /* .filter__section {
 } */
+.filter__footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+}
+.filter__btn {
+	padding: 0 15px;
+}
+
 .section-filter {
-	padding: 20px 15px;
+	padding: 15px;
 	border-bottom: 1px solid #72c9d4;
+	&:last-child {
+		border: 0;
+	}
 }
 .section-filter__title {
 	color: #36949f;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 700;
 	line-height: 22px;
-	margin: 0 0 15px 0;
+	//margin: 0 0 15px 0;
 	// для спойлера:
 	min-height: 30px;
 	display: flex;
 	align-items: center;
+	//нарисуем круг для стрелочек (при нажатии на который и на заголовок срабатывает спойлер):
+	justify-content: space-between;
+	&.spoiler {
+		cursor: pointer;
+		&::after {
+			content: "";
+			border-radius: 50%;
+			flex: 0 0 35px;
+			width: 35px;
+			height: 35px;
+			border: 1px solid #72c9d4;
+			background: url("../img/icons/right-chevron.png") center no-repeat;
+		}
+		&._active {
+			color: #9b8f8f;
+			&::after {
+				background: url("../img/icons/down-chevron.png") center no-repeat;
+			}
+		}
+	}
+	// изначально скроем производителей (слайдер закрыт)
+	/* &.spoiler + .section-filter__body {
+		display: none;
+	} */
 }
-/* .section-filter__body {
-} */
+.section-filter__body {
+	padding: 15px 0 0 0;
+}
+
+.section-filter__checkbox {
+	display: block; // чтобы квадратики расположились в столбик
+	margin: 0 0 15px 0;
+	&:last-child {
+		margin: 0;
+	}
+}
+
 .price-filter {
 	.price-filter__slider {
 		height: 4px;
@@ -156,13 +202,15 @@
 
 //================================================================================================================================
 
-.compare-filter {
-}
+/* .compare-filter {
+} */
 .compare-filter__items {
+	//padding: 0 13px 0 0;
 	margin: 0 0 20px 0;
 }
 .compare-filter__item {
 	display: flex;
+	justify-content: space-between;
 	margin: 0 0 10px 0;
 	align-items: center;
 	&:last-child {
@@ -170,15 +218,17 @@
 	}
 }
 .compare-filter__link {
-	flex: 1 1 auto;
+	line-height: 16px;
 	color: #1ab9ce;
 	font-size: 16px;
 	font-weight: 300;
 	text-decoration: underline;
 }
 .compare-filter__remove {
+	flex: 0 0 32px;
 	width: 32px;
 	height: 32px;
+	margin: 3px 0 0 5px;
 	background: url("../img/icons/remove.png") 0 0 no-repeat;
 	@media (min-width: 991px) {
 		&:hover {
@@ -195,18 +245,23 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 35px;
+	height: 33px;
 	background-color: #1ab9ce;
 	padding: 0 13px;
 	border-radius: 25px;
 	span {
 		background: url("../img/icons/compare.png") left no-repeat;
-		padding: 0 0 10px 23px;
+		padding: 0 0 0 20px;
+		line-height: 33px;
+		display: inline-block;
 		text-transform: uppercase;
 		color: #ffffff;
 		font-weight: 900;
-		margin-top: 9px;
 	}
 }
 .compare-filter__clean {
+	border-radius: 50%;
+	width: 48px;
+	height: 48px;
+	background: #e6e6e6 url("../img/icons/trash.png") center no-repeat;
 }

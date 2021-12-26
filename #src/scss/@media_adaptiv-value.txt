@@ -55,6 +55,14 @@ calc(100% + 48px);
 
 
 data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%"
+
+
+
+
+<label class="checkbox">
+	<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+	<span class="checkbox__text"><span>Clear-fit</span></span>
+</label>
 	
 
 	
