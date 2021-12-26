@@ -223,11 +223,52 @@
 							<div class="filter__section section-filter">
 								<div class="section-filter__title">Цена (руб.):</div>
 								<div class="section-filter__body">
-									<div class="price-filter"></div>
+									<div class="price-filter">
+										<div class="price-filter__slider"></div>
+										<div class="price-filter__values values-price-filter">
+											<div class="values-price-filter__column">
+												<div class="values-price-filter__label">от</div>
+												<div class="values-price-filter__input">
+													<input id="price-start" autocomplete="off" type="text" name="form[]"
+														class="input">
+												</div>
+											</div>
+											<div class="values-price-filter__column">
+												<div class="values-price-filter__label">до</div>
+												<div class="values-price-filter__input">
+													<input id="price-end" autocomplete="off" type="text" name="form[]" class="input">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="filter__section section-filter">
+								<div class="section-filter__title">Товары для сравнения:</div>
+								<div class="section-filter__body">
+									<div class="compare-filter">
+										<div class="compare-filter__items">
+											<div class="compare-filter__item">
+												<a href="#" class="compare-filter__link">Беговая дорожка №1</a>
+												<a href="#" class="compare-filter__remove"></a>
+											</div>
+											<div class="compare-filter__item">
+												<a href="#" class="compare-filter__link">Беговая дорожка №2</a>
+												<a href="#" class="compare-filter__remove"></a>
+											</div>
+											<div class="compare-filter__item">
+												<a href="#" class="compare-filter__link">Беговая дорожка №3</a>
+												<a href="#" class="compare-filter__remove"></a>
+											</div>
+										</div>
+										<div class="compare-filter__footer">
+											<div class="compare-filter__button"><span>Сравнить</span></div>
+											<div class="compare-filter__clean"></div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
 
 				</aside>
 				<!-- flex-контейнер -->

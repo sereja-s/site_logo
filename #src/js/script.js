@@ -1371,7 +1371,8 @@ ibg();
 
 // nouislider (фильтр цены): 
 @@include('libs/nouislider.js', {})
-
+// wNumb (форматирование цены  в фильтре цен (показывает без копеек)):
+@@include('libs/wNumb.min.js', {})
 
 // Подключение js-файлов: 
 @@include('files/scripts.js', {})
