@@ -29,3 +29,15 @@ function setPriceValues() {
 	priceSlider.noUiSlider.set([priceStartValue, priceEndValue]);
 }
 
+//=================================================================================================================================
+
+// При нажатии на заголовок ФИЛЬТР ТОВАРОВ выезжает фильтр (на малых экранах) 4-2:16:09 :
+
+if (isMobile.any()) {
+	const filterTitle = document.querySelector('.filter__title');
+	filterTitle.addEventListener("click", function (e) {
+		filterTitle.classList.toggle('_active');
+		_slideToggle(filterTitle.nextElementSibling);
+	});
+}
+

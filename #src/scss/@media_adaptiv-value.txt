@@ -63,6 +63,19 @@ data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%"
 	<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
 	<span class="checkbox__text"><span>Clear-fit</span></span>
 </label>
+
+
+
+
+<!-- форма выбора (выпадающий список): -->
+								<div class="order-catalog__select">
+									<select name="form[]" class="form">
+										<option value="1" selected="selected">По умолчанию</option>
+										<option value="2">По цене</option>
+										<option value="3">По названию</option>
+									</select>
+								</div>
+							</div>
 	
 
 	

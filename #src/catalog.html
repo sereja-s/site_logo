@@ -219,238 +219,244 @@
 					</nav>
 					<div class="filter">
 						<div class="filter__title">Фильтр товаров</div>
-						<!-- ОБщая оболочка спойлера (добавили атрибут data-spoilers) -->
-						<div data-spoilers class="filter__body spoilers">
-							<div class="filter__section section-filter">
-								<div class="section-filter__title">Цена (руб.):</div>
-								<div class="section-filter__body">
-									<div class="price-filter">
-										<div class="price-filter__slider"></div>
-										<div class="price-filter__values values-price-filter">
-											<div class="values-price-filter__column">
-												<div class="values-price-filter__label">от</div>
-												<div class="values-price-filter__input">
-													<input id="price-start" autocomplete="off" type="text" name="form[]"
-														class="input">
+						<div class="filter__content">
+							<!-- ОБщая оболочка спойлера (добавили атрибут data-spoilers) -->
+							<div data-spoilers class="filter__body spoilers">
+								<div class="filter__section section-filter">
+									<div class="section-filter__title">Цена (руб.):</div>
+									<div class="section-filter__body">
+										<div class="price-filter">
+											<div class="price-filter__slider"></div>
+											<div class="price-filter__values values-price-filter">
+												<div class="values-price-filter__column">
+													<div class="values-price-filter__label">от</div>
+													<div class="values-price-filter__input">
+														<input id="price-start" autocomplete="off" type="text" name="form[]"
+															class="input">
+													</div>
 												</div>
-											</div>
-											<div class="values-price-filter__column">
-												<div class="values-price-filter__label">до</div>
-												<div class="values-price-filter__input">
-													<input id="price-end" autocomplete="off" type="text" name="form[]" class="input">
+												<div class="values-price-filter__column">
+													<div class="values-price-filter__label">до</div>
+													<div class="values-price-filter__input">
+														<input id="price-end" autocomplete="off" type="text" name="form[]"
+															class="input">
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="filter__section section-filter">
-								<div class="section-filter__title">Товары для сравнения:</div>
-								<div class="section-filter__body">
-									<div class="compare-filter">
-										<div class="compare-filter__items">
-											<div class="compare-filter__item">
-												<a href="#" class="compare-filter__link">Беговая дорожка №1</a>
-												<a href="#" class="compare-filter__remove"></a>
+								<div class="filter__section section-filter">
+									<div class="section-filter__title">Товары для сравнения:</div>
+									<div class="section-filter__body">
+										<div class="compare-filter">
+											<div class="compare-filter__items">
+												<div class="compare-filter__item">
+													<a href="#" class="compare-filter__link">Беговая дорожка №1</a>
+													<a href="#" class="compare-filter__remove"></a>
+												</div>
+												<div class="compare-filter__item">
+													<a href="#" class="compare-filter__link">Беговая дорожка №2</a>
+													<a href="#" class="compare-filter__remove"></a>
+												</div>
+												<div class="compare-filter__item">
+													<a href="#" class="compare-filter__link">Беговая дорожка №3</a>
+													<a href="#" class="compare-filter__remove"></a>
+												</div>
 											</div>
-											<div class="compare-filter__item">
-												<a href="#" class="compare-filter__link">Беговая дорожка №2</a>
-												<a href="#" class="compare-filter__remove"></a>
+											<div class="compare-filter__footer">
+												<a href="#" class="compare-filter__button"><span>Сравнить</span></a>
+												<a href="#" class="compare-filter__clean"></a>
 											</div>
-											<div class="compare-filter__item">
-												<a href="#" class="compare-filter__link">Беговая дорожка №3</a>
-												<a href="#" class="compare-filter__remove"></a>
-											</div>
-										</div>
-										<div class="compare-filter__footer">
-											<a href="#" class="compare-filter__button"><span>Сравнить</span></a>
-											<a href="#" class="compare-filter__clean"></a>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="filter__section section-filter">
-								<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
-								<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Производитель:</div>
-								<div class="section-filter__body">
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>Clear-fit</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>Diadora</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>Hasttings</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>Carbon-fitness</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>Nordic Track</span></span>
-									</label>
+								<div class="filter__section section-filter">
+									<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
+									<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Производитель:</div>
+									<div class="section-filter__body">
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>Clear-fit</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>Diadora</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>Hasttings</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>Carbon-fitness</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>Nordic Track</span></span>
+										</label>
+									</div>
+								</div>
+								<div class="filter__section section-filter">
+									<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
+									<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Мощность двигателя:
+									</div>
+									<div class="section-filter__body">
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>18</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>16</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>14</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>12</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>10</span></span>
+										</label>
+									</div>
+								</div>
+								<div class="filter__section section-filter">
+									<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
+									<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Размер бегового
+										полотна:
+									</div>
+									<div class="section-filter__body">
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>50</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>40</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>30</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>20</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>10</span></span>
+										</label>
+									</div>
+								</div>
+								<div class="filter__section section-filter">
+									<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
+									<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Вес пользователя
+										(макс.):
+									</div>
+									<div class="section-filter__body">
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>150</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>140</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>130</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>120</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>110</span></span>
+										</label>
+									</div>
+								</div>
+								<div class="filter__section section-filter">
+									<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
+									<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Скорость (макс.):
+									</div>
+									<div class="section-filter__body">
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>30</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>25</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>20</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>15</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>10</span></span>
+										</label>
+									</div>
+								</div>
+								<div class="filter__section section-filter">
+									<div class="section-filter__title ">Угол наклона:</div>
+									<div class="section-filter__body">
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>нет регулировки</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>механическая</span></span>
+										</label>
+										<label class="section-filter__checkbox checkbox">
+											<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+												name="form[]">
+											<span class="checkbox__text"><span>электронная</span></span>
+										</label>
+									</div>
 								</div>
 							</div>
-							<div class="filter__section section-filter">
-								<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
-								<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Мощность двигателя:</div>
-								<div class="section-filter__body">
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>18</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>16</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>14</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>12</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>10</span></span>
-									</label>
-								</div>
+							<div class="filter__footer">
+								<button type="submit" class="filter__btn btn">Подобрать</button>
+								<button type="reset" class="filter__btn btn btn--grey">Сбросить</button>
 							</div>
-							<div class="filter__section section-filter">
-								<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
-								<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Размер бегового полотна:
-								</div>
-								<div class="section-filter__body">
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>50</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>40</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>30</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>20</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>10</span></span>
-									</label>
-								</div>
-							</div>
-							<div class="filter__section section-filter">
-								<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
-								<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Вес пользователя (макс.):
-								</div>
-								<div class="section-filter__body">
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>150</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>140</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>130</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>120</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>110</span></span>
-									</label>
-								</div>
-							</div>
-							<div class="filter__section section-filter">
-								<!-- Cпойлер (блок меню сворачивается при щелчке на заголовок-кнопку(добавили ей tabindex="-1" и атрибут data-spoiler)) -->
-								<div tabindex="-1" data-spoiler class="section-filter__title spoiler">Скорость (макс.):
-								</div>
-								<div class="section-filter__body">
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>30</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>25</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>20</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>15</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>10</span></span>
-									</label>
-								</div>
-							</div>
-							<div class="filter__section section-filter">
-								<div class="section-filter__title ">Угол наклона:</div>
-								<div class="section-filter__body">
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>нет регулировки</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>механическая</span></span>
-									</label>
-									<label class="section-filter__checkbox checkbox">
-										<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
-											name="form[]">
-										<span class="checkbox__text"><span>электронная</span></span>
-									</label>
-								</div>
-							</div>
-						</div>
-						<div class="filter__footer">
-							<button type="submit" class="filter__btn btn">Подобрать</button>
-							<button type="reset" class="filter__btn btn btn--grey">Сбросить</button>
 						</div>
 					</div>
 				</aside>
@@ -592,116 +598,35 @@
 						</div>
 						<button type="submit" class="search-page__btn btn">Найти</button>
 					</form>
-					<!-- Слайдер главной страницы -->
-					<div class="page__slider mainslider">
-						<div class="mainslider__body swiper">
-							<div class="mainslider__slide">
-								<div class="mainslider__content content-mainslider">
-									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
-									<div class="content-mainslider__text text-mainslider">
-										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
-										<p><span class="text-mainslider__text-2">по старой цене</span></p>
-										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
-									</div>
-									<div class="content-mainslider__footer">
-										<div class="content-mainslider__price rub">
-											от 45 000
-										</div>
-										<a href="#" class="content-mainslider__button">
-											<span>подробнее</span>
-										</a>
-									</div>
-								</div>
-								<div class="mainslider__image ibg">
-									<img src="img/mainslider/01.jpg" alt="main slider">
-								</div>
-							</div>
-							<div class="mainslider__slide">
-								<div class="mainslider__content content-mainslider">
-									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
-									<div class="content-mainslider__text text-mainslider">
-										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
-										<p><span class="text-mainslider__text-2">по старой цене</span></p>
-										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
-									</div>
-									<div class="content-mainslider__footer">
-										<div class="content-mainslider__price rub">
-											от 45 000
-										</div>
-										<a href="#" class="content-mainslider__button">
-											<span>подробнее</span>
-										</a>
-									</div>
-								</div>
-								<div class="mainslider__image ibg">
-									<img src="img/mainslider/02.jpg" alt="main slider">
+					<!-- Хлебные крошки (4-2:18:25)-->
+					<nav class="breadcrumbs">
+						<ul class="breadcrumbs__list">
+							<li><a href="" class="breadcrumbs__link">Главная</a></li>
+							<li><span class="breadcrumbs__item">Каталог товара</span></li>
+						</ul>
+					</nav>
+					<!-- Каталог (4-2:23:17) -->
+					<div class="catalog">
+						<h1 class="catalog__title">Товары</h1>
+						<!-- Действия -->
+						<div class="catalog__actions actions-catalog">
+							<!-- сортировка -->
+							<div class="actions-catalog__order order-catalog">
+								<div class="order-catalog__lebel">Сортировать по:</div>
+								<!-- форма выбора (выпадающий список): -->
+								<div class="order-catalog__select">
+									<select name="form[]" class="form">
+										<option value="1" selected="selected">По умолчанию</option>
+										<option value="2">По цене</option>
+										<option value="3">По названию</option>
+									</select>
 								</div>
 							</div>
-							<div class="mainslider__slide">
-								<div class="mainslider__content content-mainslider">
-									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
-									<div class="content-mainslider__text text-mainslider">
-										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
-										<p><span class="text-mainslider__text-2">по старой цене</span></p>
-										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
-									</div>
-									<div class="content-mainslider__footer">
-										<div class="content-mainslider__price rub">
-											от 45 000
-										</div>
-										<a href="#" class="content-mainslider__button">
-											<span>подробнее</span>
-										</a>
-									</div>
-								</div>
-								<div class="mainslider__image ibg">
-									<img src="img/mainslider/03.jpg" alt="main slider">
-								</div>
+							<!-- выбор вида отображения -->
+							<div class="actions-catalog__view view-catalog">
+								<div class="view-catalog__item view-catalog__item--grid"></div>
+								<div class="view-catalog__item view-catalog__item--list"></div>
 							</div>
-							<div class="mainslider__slide">
-								<div class="mainslider__content content-mainslider">
-									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
-									<div class="content-mainslider__text text-mainslider">
-										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
-										<p><span class="text-mainslider__text-2">по старой цене</span></p>
-										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
-									</div>
-									<div class="content-mainslider__footer">
-										<div class="content-mainslider__price rub">
-											от 45 000
-										</div>
-										<a href="#" class="content-mainslider__button">
-											<span>подробнее</span>
-										</a>
-									</div>
-								</div>
-								<div class="mainslider__image ibg">
-									<img src="img/mainslider/04.jpg" alt="main slider">
-								</div>
-							</div>
-							<div class="mainslider__slide">
-								<div class="mainslider__content content-mainslider">
-									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
-									<div class="content-mainslider__text text-mainslider">
-										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
-										<p><span class="text-mainslider__text-2">по старой цене</span></p>
-										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
-									</div>
-									<div class="content-mainslider__footer">
-										<div class="content-mainslider__price rub">
-											от 45 000
-										</div>
-										<a href="#" class="content-mainslider__button">
-											<span>подробнее</span>
-										</a>
-									</div>
-								</div>
-								<div class="mainslider__image ibg">
-									<img src="img/mainslider/05.jpg" alt="main slider">
-								</div>
-							</div>
-						</div>
-						<div class="mainslider__dotts">
 						</div>
 					</div>
 					<!-- Слайдер с популярныи товарами (3-3:45) -->
@@ -1659,9 +1584,120 @@
 							</div>
 						</div>
 					</div>
+					<!-- Слайдер главной(контакты) страницы -->
+					<div class="page__slider mainslider">
+						<div class="mainslider__body swiper">
+							<div class="mainslider__slide">
+								<div class="mainslider__content content-mainslider">
+									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
+									<div class="content-mainslider__text text-mainslider">
+										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
+										<p><span class="text-mainslider__text-2">по старой цене</span></p>
+										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
+									</div>
+									<div class="content-mainslider__footer">
+										<div class="content-mainslider__price rub">
+											от 45 000
+										</div>
+										<a href="#" class="content-mainslider__button">
+											<span>подробнее</span>
+										</a>
+									</div>
+								</div>
+								<div class="mainslider__image ibg">
+									<img src="img/mainslider/01.jpg" alt="main slider">
+								</div>
+							</div>
+							<div class="mainslider__slide">
+								<div class="mainslider__content content-mainslider">
+									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
+									<div class="content-mainslider__text text-mainslider">
+										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
+										<p><span class="text-mainslider__text-2">по старой цене</span></p>
+										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
+									</div>
+									<div class="content-mainslider__footer">
+										<div class="content-mainslider__price rub">
+											от 45 000
+										</div>
+										<a href="#" class="content-mainslider__button">
+											<span>подробнее</span>
+										</a>
+									</div>
+								</div>
+								<div class="mainslider__image ibg">
+									<img src="img/mainslider/02.jpg" alt="main slider">
+								</div>
+							</div>
+							<div class="mainslider__slide">
+								<div class="mainslider__content content-mainslider">
+									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
+									<div class="content-mainslider__text text-mainslider">
+										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
+										<p><span class="text-mainslider__text-2">по старой цене</span></p>
+										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
+									</div>
+									<div class="content-mainslider__footer">
+										<div class="content-mainslider__price rub">
+											от 45 000
+										</div>
+										<a href="#" class="content-mainslider__button">
+											<span>подробнее</span>
+										</a>
+									</div>
+								</div>
+								<div class="mainslider__image ibg">
+									<img src="img/mainslider/03.jpg" alt="main slider">
+								</div>
+							</div>
+							<div class="mainslider__slide">
+								<div class="mainslider__content content-mainslider">
+									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
+									<div class="content-mainslider__text text-mainslider">
+										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
+										<p><span class="text-mainslider__text-2">по старой цене</span></p>
+										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
+									</div>
+									<div class="content-mainslider__footer">
+										<div class="content-mainslider__price rub">
+											от 45 000
+										</div>
+										<a href="#" class="content-mainslider__button">
+											<span>подробнее</span>
+										</a>
+									</div>
+								</div>
+								<div class="mainslider__image ibg">
+									<img src="img/mainslider/04.jpg" alt="main slider">
+								</div>
+							</div>
+							<div class="mainslider__slide">
+								<div class="mainslider__content content-mainslider">
+									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
+									<div class="content-mainslider__text text-mainslider">
+										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
+										<p><span class="text-mainslider__text-2">по старой цене</span></p>
+										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
+									</div>
+									<div class="content-mainslider__footer">
+										<div class="content-mainslider__price rub">
+											от 45 000
+										</div>
+										<a href="#" class="content-mainslider__button">
+											<span>подробнее</span>
+										</a>
+									</div>
+								</div>
+								<div class="mainslider__image ibg">
+									<img src="img/mainslider/05.jpg" alt="main slider">
+								</div>
+							</div>
+						</div>
+						<div class="mainslider__dotts">
+						</div>
+					</div>
 				</div>
 			</div>
-
 			<div class="page__info-menu info-menu">
 				<div class="info-menu__container container">
 					<div class="info-menu__body">
@@ -1688,6 +1724,7 @@
 					</div>
 				</div>
 			</div>
+
 		</main>
 		@@include('_footer.html',{})
 	</div>

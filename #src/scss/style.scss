@@ -170,6 +170,65 @@ body {
 	}
 }
 
+//================================================== select ===================================================================
+
+.select {
+	position: relative;
+	&__item {
+		position: relative;
+		min-width: 166px;
+	}
+	&__title {
+		color: #000;
+		//border: 1px solid #d9d9d9;
+		background-color: #fff;
+		cursor: pointer;
+		//border-radius: 4px;
+	}
+	&__value {
+		display: flex;
+		font-size: 14px;
+		color: #0097ac;
+		height: 30px;
+		padding: 0 15px;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+		span {
+			height: 1em;
+			overflow: hidden;
+		}
+		&::before {
+			content: "";
+			display: inline-block;
+			transition: all 0.7s ease 0s;
+			width: 11px;
+			height: 7px;
+			background: url("../img/icons/select.svg") center / 100% no-repeat;
+		}
+	}
+	&__input {
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+	}
+	&__options {
+		color: #000;
+		display: none;
+		position: absolute;
+		top: 29px;
+		//border-radius: 0 0 4px 4px;
+		min-width: 100%;
+		left: 0;
+		background-color: #fff;
+		border-top: 0;
+		border: 1px solid #d9d9d9;
+		font-size: 14px;
+		box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+		padding: 10px 0 5px 0;
+	}
+}
+
 //================================================== Класс input ================================================================
 
 input[type="text"],
