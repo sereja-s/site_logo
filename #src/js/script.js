@@ -500,6 +500,103 @@ if (document.querySelector('.brands-slider')) {
 	});
 }
 
+//=========================================== images-product__subslider (5-28:05) =================================================
+
+if (document.querySelector('.images-product')) {
+	let imagesSubSlider = new Swiper('.images-product__subslider', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 4,
+		spaceBetween: 0,
+		// оболочка слайдера адаптирует свою высоту к высоте текущего активного слайда
+		//autoHeight: true,
+		//watchOverflow: true,
+		speed: 800,
+		//loop: true, /* бесконечный слайд (для правильной работы: добавить min-width: 0; для .page__content (flex-контейнера. в котором лежит оболочка для главного слайдера .page__slider)) */
+		//loopAdditionalSlides: 5,
+		//preloadImages: false,
+		//parallax: true, // для применения это эффекта нужно добавить в html-файле к slider-main__content атрибуты: data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" ( когда слайд становится активным: контентная часть слайда движется по оси X движестя влево и проявляется(становится не прохрачной))
+		// Dotts
+		/* pagination: {
+			el: '.products-slider__info',
+			type: 'fraction'
+		}, */
+		//Arrows
+		// обратимся к конкретным кнопкам, указав в начале класс родителя:
+		/* navigation: {
+			nextEl: '.brands-slider__arrow--next',
+			prevEl: '.brands-slider__arrow--prev',
+		}, */
+		/* breakpoints: {
+			320: {
+				slidesPerView: 1,
+				autoHeight: true,
+			},
+			595: {
+				slidesPerView: 3,
+			},
+		}, */
+		on: {
+			lazyImageReady: function () {
+				ibg();
+			},
+		}
+	});
+	// images-product__mainslider (5-22:40:00):
+	let imagesMainSlider = new Swiper('.images-product__mainslider', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		// cвяжем оба слайдера: 
+		thumbs: {
+			swiper: imagesSubSlider
+		},
+		// оболочка слайдера адаптирует свою высоту к высоте текущего активного слайда
+		//autoHeight: true,
+		//watchOverflow: true,
+		speed: 800,
+
+		//loop: true, /* бесконечный слайд (для правильной работы: добавить min-width: 0; для .page__content (flex-контейнера. в котором лежит оболочка для главного слайдера .page__slider)) */
+		//loopAdditionalSlides: 5,
+		//preloadImages: false,
+		//parallax: true, // для применения это эффекта нужно добавить в html-файле к slider-main__content атрибуты: data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" ( когда слайд становится активным: контентная часть слайда движется по оси X движестя влево и проявляется(становится не прохрачной))
+		// Dotts
+		/* pagination: {
+			el: '.products-slider__info',
+			type: 'fraction'
+		}, */
+		//Arrows
+		// обратимся к конкретным кнопкам, указав в начале класс родителя:
+		/* navigation: {
+			nextEl: '.brands-slider__arrow--next',
+			prevEl: '.brands-slider__arrow--prev',
+		}, */
+		/* breakpoints: {
+			320: {
+				slidesPerView: 1,
+				autoHeight: true,
+			},
+			595: {
+				slidesPerView: 3,
+			},
+		}, */
+		on: {
+			lazyImageReady: function () {
+				ibg();
+			},
+		}
+	});
+}
+
+//=========================================== images-product__mainslider (5-22:40:00) ==============================================
+
+if (document.querySelector('.images-product')) {
+
+}
+
+
+
 //==================================================================================================================================
 
 // ФУНКЦИЯ УБИРАЕТ ТЕХНИЧЕСКИЙ КЛАСС '_hover'

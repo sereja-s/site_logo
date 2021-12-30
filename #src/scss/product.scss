@@ -1,0 +1,81 @@
+/* .product {
+} */
+.product__title {
+	margin: 0 0 18px 0;
+	color: #333333;
+	font-family: "UniSans";
+	font-size: 36px;
+	text-transform: uppercase;
+	font-weight: 900;
+	span {
+		display: block;
+		font-size: 30px;
+		color: #dadada;
+	}
+}
+.product__content {
+	display: flex;
+}
+.product__images {
+	flex: 0 0 65.5%; // размер: высота блока / ширина блока * 100%
+	min-width: 0; // xnj,ы слайдер корректно работал во flex-контейнере
+}
+/* .images-product {
+} */
+.images-product__mainslider {
+	margin: 0 0 13px 0;
+}
+
+.images-product__mainslide {
+	border: 1px solid #dbc9c9;
+	height: 494px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.images-product__sale {
+	position: absolute;
+	top: 16px;
+	left: 20px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// рисуем кружок:
+	width: 58px;
+	height: 58px;
+	background-color: coral;
+	color: #fff;
+	font-size: 16px;
+}
+/* .images-product__image {
+} */
+/* .images-product__subslider {
+} */
+.product__body {
+	flex: 1 1 auto;
+	padding: 0 0 0 30px;
+}
+
+//================================================================================================================================
+
+.images-product__subslider {
+	margin: 0 -6px;
+}
+
+.images-product__subslide {
+	padding: 0 6px;
+}
+.images-product__subimage {
+	height: 125px;
+	border: 1px solid #dbc9c9;
+	// разместим картинку внутри (используем класс ibg) :
+
+	/* 	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	top: 0;
+	left: 0; */
+}

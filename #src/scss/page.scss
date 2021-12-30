@@ -15,9 +15,10 @@
 	position: relative;
 	z-index: 3;
 	flex: 0 0 260px;
-	@media (max-width: 894px) {
+	margin: 0 0 30px 0;
+	/* @media (max-width: 894px) {
 		margin: 0 0 22px 0;
-	}
+	} */
 }
 .page__menu {
 	margin: 0 0 40px 0;

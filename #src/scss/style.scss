@@ -204,6 +204,7 @@ body {
 			transition: all 0.7s ease 0s;
 			width: 11px;
 			height: 7px;
+			margin: 0 0 0 5px;
 			background: url("../img/icons/select.svg") center / 100% no-repeat;
 		}
 	}
@@ -226,6 +227,37 @@ body {
 		font-size: 14px;
 		box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
 		padding: 10px 0 5px 0;
+	}
+	&__option {
+		cursor: pointer;
+		padding: 5px 15px;
+		margin: 0;
+		@media (min-width: 991px) {
+			&:hover {
+				background: #d9d9d9;
+			}
+		}
+	}
+	&_show {
+		.select__item {
+			min-width: 0;
+			border: 2px solid #f3f3f3;
+		}
+		.select__value {
+			color: #999999;
+			font-weight: 900;
+		}
+	}
+	&._active {
+		z-index: 5;
+		.select__value {
+			&::before {
+				transform: rotate(-180deg);
+			}
+		}
+		.select__options {
+			display: block;
+		}
 	}
 }
 
@@ -643,8 +675,26 @@ textarea.input {
 	background: url("../img/icons/home/cart-orange.png") 0 0 no-repeat;
 	width: 64px;
 	height: 64px;
-	margin: 0 auto 25px auto; /* hасположили иконку по центру карточки */
+	margin: 0 auto 25px auto; /* расположили иконку по центру карточки */
+	display: block;
+	&--catalog {
+		margin: 0;
+	}
 }
+
+.hover-item-product__compare {
+	background: url(../img/icons/compare.webp) left no-repeat;
+	padding: 0 0 0 30px;
+	line-height: 21px;
+	display: inline-block;
+	color: #fff;
+	//margin-bottom: 80px;
+	span {
+		font-weight: 300;
+		border-bottom: 1px dashed;
+	}
+}
+
 .hover-item-product__footer {
 	display: flex;
 	flex-wrap: wrap;
@@ -717,5 +767,7 @@ textarea.input {
 //=================================================================================================================================
 
 @import "catalog";
+@import "pagging";
+@import "product";
 @import "header";
 @import "footer";
