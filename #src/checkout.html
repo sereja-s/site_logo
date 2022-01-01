@@ -2,7 +2,7 @@
 <html lang="ru">
 
 @@include('_head.html', {
-"title": "ShopLogo-товар"
+"title": "Оформление"
 })
 
 <body>
@@ -411,9 +411,155 @@
 					<nav class="breadcrumbs">
 						<ul class="breadcrumbs__list">
 							<li><a href="" class="breadcrumbs__link">Главная</a></li>
-							<li><span class="breadcrumbs__item">Товар</span></li>
+							<li><span class="breadcrumbs__item">Оформление</span></li>
 						</ul>
 					</nav>
+					<!-- Оформление (5-1:30:40) -->
+					<form action="#" class="checkout">
+						<div class="checkout__title title-checkout">Оформление заказа</div>
+						<div class="checkout__content content-checkout tabs">
+							<nav class="content-checkout__nav">
+								<div class="content-checkout__item tabs-item _active"><span>Быстрый заказ</span></div>
+								<div class="content-checkout__item tabs-item"><span>Курьером по городу и области</span></div>
+								<div class="content-checkout__item tabs-item"><span>Достака в регионы</span></div>
+							</nav>
+							<div class="content-checkout__body">
+								<div class="content-checkout__block tabs-block _active">
+									<div class="content-checkout__form form-checkout">
+										<div class="form-checkout__column">
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel">Имя: <span>*</span></div>
+												<div class="form-checkout__input">
+													<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+														data-value="" class="input req">
+												</div>
+											</div>
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel">Моб. телефон: <span>*</span></div>
+												<div class="form-checkout__input">
+													<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+														data-value="" class="input req">
+												</div>
+											</div>
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel">Ваш E-mail:</div>
+												<div class="form-checkout__input">
+													<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+														data-value="" class="input">
+												</div>
+											</div>
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel"></div>
+												<div class="form-checkout__input">
+													<label class="checkbox">
+														<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+															name="form[]">
+														<span class="checkbox__text"><span>Подписаться на новости и
+																скидки</span></span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-checkout__column">
+											<div class="form-checkout__text">
+												<p><span>*</span>Поля,оязательные для заполнения</p>
+												<p>Отправка осуществляется только после оплаты товара</p>
+												<p>Оплата доставки возможна после получения товара</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="content-checkout__block tabs-block"></div>
+								<div class="content-checkout__block tabs-block"></div>
+							</div>
+						</div>
+						<div class="checkout__order order-checkout">
+							<div class="order-checkout__title title-checkout">Ваш заказ</div>
+							<div class="order-checkout__items">
+								<div class="order-checkout__item item-order">
+									<div class="item-order__content">
+										<a href="#" class="item-order__image">
+											<img src="img/products/05.jpg" alt="image">
+										</a>
+										<div class="item-order__body">
+											<a href="№" class="item-order__title"><span>Тренажёр</span>для ног</a>
+											<div class="item-order__price rub">64 990</div>
+										</div>
+									</div>
+									<div class="item-order__quantity">
+										<div class="quantity">
+											<div class="quantity__button quantity__button--minus"></div>
+											<div class="quantity__input">
+												<input autocomplete="off" type="text" name="form[]" value="1">
+											</div>
+											<div class="quantity__button quantity__button--plus"></div>
+										</div>
+									</div>
+									<div class="item-order__total">
+										<div class="item-order__label">Всего:</div>
+										<div class="item-order__price rub">64 000</div>
+									</div>
+									<a href="#" class="item-order__delete"></a>
+								</div>
+								<div class="order-checkout__item item-order">
+									<div class="item-order__content">
+										<a href="#" class="item-order__image">
+											<img src="img/products/06.jpg" alt="image">
+										</a>
+										<div class="item-order__body">
+											<a href="№" class="item-order__title"><span>Тренажёр</span>для ног</a>
+											<div class="item-order__price rub">64 990</div>
+										</div>
+									</div>
+									<div class="item-order__quantity">
+										<div class="quantity">
+											<div class="quantity__button quantity__button--minus"></div>
+											<div class="quantity__input">
+												<input autocomplete="off" type="text" name="form[]" value="1">
+											</div>
+											<div class="quantity__button quantity__button--plus"></div>
+										</div>
+									</div>
+									<div class="item-order__total">
+										<div class="item-order__label">Всего:</div>
+										<div class="item-order__price rub">64 000</div>
+									</div>
+									<a href="#" class="item-order__delete"></a>
+								</div>
+								<div class="order-checkout__item item-order">
+									<div class="item-order__content">
+										<a href="#" class="item-order__image">
+											<img src="img/products/07.jpg" alt="image">
+										</a>
+										<div class="item-order__body">
+											<a href="№" class="item-order__title"><span>Тренажёр</span>для ног</a>
+											<div class="item-order__price rub">64 990</div>
+										</div>
+									</div>
+									<div class="item-order__quantity">
+										<div class="quantity">
+											<div class="quantity__button quantity__button--minus"></div>
+											<div class="quantity__input">
+												<input autocomplete="off" type="text" name="form[]" value="1">
+											</div>
+											<div class="quantity__button quantity__button--plus"></div>
+										</div>
+									</div>
+									<div class="item-order__total">
+										<div class="item-order__label">Всего:</div>
+										<div class="item-order__price rub">64 000</div>
+									</div>
+									<a href="#" class="item-order__delete"></a>
+								</div>
+							</div>
+							<div class="order-checkout__footer">
+								<div class="order-checkout__total">
+									Итого: <span class="rub">192 000</span>
+								</div>
+								<button type="submit" class="order-checkout__btn btn">Оформить заказ</button>
+							</div>
+						</div>
+					</form>
 					<!-- Товар (5-15:17) -->
 					<section class="product">
 						<h1 class="product__title">XQIAO A2

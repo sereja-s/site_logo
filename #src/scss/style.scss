@@ -276,6 +276,9 @@ input {
 	width: 100%;
 	display: block;
 	padding: 0 15px;
+	&._error {
+		border: 1px solid red;
+	}
 }
 textarea.input {
 	resize: none;
@@ -769,5 +772,6 @@ textarea.input {
 @import "catalog";
 @import "pagging";
 @import "product";
+@import "checkout";
 @import "header";
 @import "footer";

@@ -17,6 +17,9 @@
 		&:last-child {
 			transform: rotate(-180deg);
 		}
+		@media (max-width: 365px) {
+			display: none;
+		}
 	}
 	&__list {
 		display: flex;

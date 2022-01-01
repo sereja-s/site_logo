@@ -589,14 +589,6 @@ if (document.querySelector('.images-product')) {
 	});
 }
 
-//=========================================== images-product__mainslider (5-22:40:00) ==============================================
-
-if (document.querySelector('.images-product')) {
-
-}
-
-
-
 //==================================================================================================================================
 
 // ФУНКЦИЯ УБИРАЕТ ТЕХНИЧЕСКИЙ КЛАСС '_hover'
@@ -1299,5 +1291,6 @@ ibg();
 @@include('libs/wNumb.min.js', {})
 
 // Подключение js-файлов: 
+@@include('files/forms.js', {})
 @@include('files/scripts.js', {})
 @@include('files/spoiler.js', {})

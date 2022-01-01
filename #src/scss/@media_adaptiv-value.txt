@@ -75,6 +75,14 @@ data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%"
 
 
 
+                                    <div class="form-checkout__input">
+													<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+														data-value="" class="input">
+												</div>
+
+
+
+
 <!-- форма выбора (выпадающий список): -->								
 									<select name="form[]" class="form">
 										<option value="1" selected="selected">По умолчанию</option>
