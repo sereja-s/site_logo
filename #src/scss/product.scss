@@ -345,8 +345,8 @@
 		}
 	}
 }
-.tabs-item {
-}
+/* .tabs-item {
+} */
 
 .info-product__body {
 	background-color: #fafafa;
@@ -356,6 +356,11 @@
 	}
 }
 .info-product__block {
+	/* скроем вкладки изначально: */
+	/* display: none;
+	&:target {
+		display: block;
+	} */
 	p {
 		color: #666666;
 		font-size: 14px;
@@ -367,8 +372,8 @@
 		}
 	}
 }
-.tabs-block {
-}
+/* .tabs-block {
+} */
 
 .info-product__table {
 	border-collapse: collapse;

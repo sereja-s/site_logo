@@ -419,12 +419,14 @@
 						<div class="checkout__title title-checkout">Оформление заказа</div>
 						<div class="checkout__content content-checkout tabs">
 							<nav class="content-checkout__nav">
-								<div class="content-checkout__item tabs-item _active"><span>Быстрый заказ</span></div>
-								<div class="content-checkout__item tabs-item"><span>Курьером по городу и области</span></div>
-								<div class="content-checkout__item tabs-item"><span>Достака в регионы</span></div>
+								<a href="#delivery" class="content-checkout__item tabs-item"><span>Быстрый заказ</span></a>
+								<a href="#delivery_in_city" class="content-checkout__item tabs-item"><span>Курьером по городу и
+										области</span></a>
+								<a href="#delivery_to_regions" class="content-checkout__item tabs-item"><span>Достака в
+										регионы</span></a>
 							</nav>
 							<div class="content-checkout__body">
-								<div class="content-checkout__block tabs-block _active">
+								<div id="delivery" class="content-checkout__block tabs-block">
 									<div class="content-checkout__form form-checkout">
 										<div class="form-checkout__column">
 											<div class="form-checkout__line">
@@ -469,8 +471,114 @@
 										</div>
 									</div>
 								</div>
-								<div class="content-checkout__block tabs-block"></div>
-								<div class="content-checkout__block tabs-block"></div>
+								<div id="delivery_in_city" class="content-checkout__block tabs-block">
+									<div class="content-checkout__form form-checkout">
+										<div class="form-checkout__column">
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel">Имя: <span>*</span></div>
+												<div class="form-checkout__input">
+													<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+														data-value="" class="input req">
+												</div>
+											</div>
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel">Моб. телефон: <span>*</span></div>
+												<div class="form-checkout__input">
+													<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+														data-value="" class="input req">
+												</div>
+											</div>
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel">Ваш E-mail:</div>
+												<div class="form-checkout__input">
+													<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+														data-value="" class="input">
+												</div>
+											</div>
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel">Ваш E-mail:</div>
+												<div class="form-checkout__input">
+													<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+														data-value="" class="input">
+												</div>
+											</div>
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel"></div>
+												<div class="form-checkout__input">
+													<label class="checkbox">
+														<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+															name="form[]">
+														<span class="checkbox__text"><span>Подписаться на новости и
+																скидки</span></span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-checkout__column">
+											<div class="form-checkout__text">
+												<p><span>*</span>Поля,оязательные для заполнения</p>
+												<p>Отправка осуществляется только после оплаты товара</p>
+												<p>Оплата доставки возможна после получения товара</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="delivery_to_regions" class="content-checkout__block tabs-block">
+									<div class="content-checkout__form form-checkout">
+										<div class="form-checkout__column">
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel">Имя: <span>*</span></div>
+												<div class="form-checkout__input">
+													<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+														data-value="" class="input req">
+												</div>
+											</div>
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel">Моб. телефон: <span>*</span></div>
+												<div class="form-checkout__input">
+													<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+														data-value="" class="input req">
+												</div>
+											</div>
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel">Ваш E-mail:</div>
+												<div class="form-checkout__input">
+													<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+														data-value="" class="input">
+												</div>
+											</div>
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel"></div>
+												<div class="form-checkout__input">
+													<label class="checkbox">
+														<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+															name="form[]">
+														<span class="checkbox__text"><span>Подписаться на новости и
+																скидки</span></span>
+													</label>
+												</div>
+											</div>
+											<div class="form-checkout__line">
+												<div class="form-checkout__lebel"></div>
+												<div class="form-checkout__input">
+													<label class="checkbox">
+														<input data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+															name="form[]">
+														<span class="checkbox__text"><span>Подписаться на новости и
+																скидки</span></span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-checkout__column">
+											<div class="form-checkout__text">
+												<p><span>*</span>Поля,оязательные для заполнения</p>
+												<p>Отправка осуществляется только после оплаты товара</p>
+												<p>Оплата доставки возможна после получения товара</p>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="checkout__order order-checkout">
@@ -681,11 +789,11 @@
 						</div>
 						<div class="product__info info-product tabs">
 							<nav class="info-product__nav">
-								<div class="info-product__item tabs-item _active"><span>Описание</span></div>
-								<div class="info-product__item tabs-item"><span>Характеристики</span></div>
+								<a href="#description" class="info-product__item tabs-item"><span>Описание</span></a>
+								<a href="#characteristics" class="info-product__item tabs-item"><span>Характеристики</span></a>
 							</nav>
 							<div class="info-product__body">
-								<div class="info-product__block tabs-block _active">
+								<div id="description" class="info-product__block tabs-block">
 									<p>Берите с собой в Новый Год только нужное,
 										Объятия крепкие, звёзды жемчужные,
 										Перчатки и шапки, коньки и салазки,
@@ -708,7 +816,7 @@
 										Берите с собой в Новый Год всё хорошее!</p>
 									<p>Алеся Синеглазая</p>
 								</div>
-								<div class="info-product__block tabs-block">
+								<div id="characteristics" class="info-product__block tabs-block">
 									<table class="info-product__table">
 										<tr>
 											<td>
@@ -732,78 +840,6 @@
 											</td>
 											<td>
 												<div class="info-product__value">Полупрофесональное</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="info-product__label">Тип беговой дорожки</div>
-											</td>
-											<td>
-												<div class="info-product__value">Электрическая</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="info-product__label">Использование</div>
-											</td>
-											<td>
-												<div class="info-product__value">Полупрофесональное</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="info-product__label">Тип беговой дорожки</div>
-											</td>
-											<td>
-												<div class="info-product__value">Электрическая</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="info-product__label">Использование</div>
-											</td>
-											<td>
-												<div class="info-product__value">Полупрофесональное</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="info-product__label">Тип беговой дорожки</div>
-											</td>
-											<td>
-												<div class="info-product__value">Электрическая</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="info-product__label">Использование</div>
-											</td>
-											<td>
-												<div class="info-product__value">Полупрофесональное</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="info-product__label">Тип беговой дорожки</div>
-											</td>
-											<td>
-												<div class="info-product__value">Электрическая</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="info-product__label">Тип беговой дорожки</div>
-											</td>
-											<td>
-												<div class="info-product__value">Электрическая</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="info-product__label">Тип беговой дорожки</div>
-											</td>
-											<td>
-												<div class="info-product__value">Электрическая</div>
 											</td>
 										</tr>
 									</table>
@@ -995,107 +1031,102 @@
 						<div class="mainslider__body swiper">
 							<div class="mainslider__slide">
 								<div class="mainslider__content content-mainslider">
-									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
+									<div class="content-mainslider__title"><span>:)</span></div>
 									<div class="content-mainslider__text text-mainslider">
-										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
-										<p><span class="text-mainslider__text-2">по старой цене</span></p>
-										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
+										<p><span class="text-mainslider__text-1">Счастья</span></p>
+										<p><span class="text-mainslider__text-2">желаем</span></p>
+										<p><span class="text-mainslider__text-3">вам</span></p>
 									</div>
 									<div class="content-mainslider__footer">
-										<div class="content-mainslider__price rub">
-											от 45 000
+										<div class="content-mainslider__price">
 										</div>
-										<a href="#" class="content-mainslider__button">
+										<!-- <a href="#" class="content-mainslider__button">
 											<span>подробнее</span>
-										</a>
+										</a> -->
 									</div>
 								</div>
 								<div class="mainslider__image ibg">
-									<img src="img/mainslider/01.jpg" alt="main slider">
+									<img src="img/mainslider/16.jpg" alt="main slider">
 								</div>
 							</div>
 							<div class="mainslider__slide">
 								<div class="mainslider__content content-mainslider">
-									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
+									<div class="content-mainslider__title"><span>:)</span></div>
 									<div class="content-mainslider__text text-mainslider">
-										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
-										<p><span class="text-mainslider__text-2">по старой цене</span></p>
-										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
+										<p><span class="text-mainslider__text-1">Счастья</span></p>
+										<p><span class="text-mainslider__text-2">желаем</span></p>
+										<p><span class="text-mainslider__text-3">вам</span></p>
 									</div>
 									<div class="content-mainslider__footer">
-										<div class="content-mainslider__price rub">
-											от 45 000
+										<div class="content-mainslider__price">
 										</div>
-										<a href="#" class="content-mainslider__button">
+										<!-- <a href="#" class="content-mainslider__button">
 											<span>подробнее</span>
-										</a>
+										</a> -->
 									</div>
 								</div>
 								<div class="mainslider__image ibg">
-									<img src="img/mainslider/02.jpg" alt="main slider">
+									<img src="img/mainslider/17.jpg" alt="main slider">
 								</div>
 							</div>
 							<div class="mainslider__slide">
 								<div class="mainslider__content content-mainslider">
-									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
+									<div class="content-mainslider__title"><span>:)</span></div>
 									<div class="content-mainslider__text text-mainslider">
-										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
-										<p><span class="text-mainslider__text-2">по старой цене</span></p>
-										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
+										<p><span class="text-mainslider__text-1">Счастья</span></p>
+										<p><span class="text-mainslider__text-2">желаем</span></p>
+										<p><span class="text-mainslider__text-3">вам</span></p>
 									</div>
 									<div class="content-mainslider__footer">
-										<div class="content-mainslider__price rub">
-											от 45 000
+										<div class="content-mainslider__price">
 										</div>
-										<a href="#" class="content-mainslider__button">
+										<!-- <a href="#" class="content-mainslider__button">
 											<span>подробнее</span>
-										</a>
+										</a> -->
 									</div>
 								</div>
 								<div class="mainslider__image ibg">
-									<img src="img/mainslider/03.jpg" alt="main slider">
+									<img src="img/mainslider/18.jpg" alt="main slider">
 								</div>
 							</div>
 							<div class="mainslider__slide">
 								<div class="mainslider__content content-mainslider">
-									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
+									<div class="content-mainslider__title"><span>:)</span></div>
 									<div class="content-mainslider__text text-mainslider">
-										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
-										<p><span class="text-mainslider__text-2">по старой цене</span></p>
-										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
+										<p><span class="text-mainslider__text-1">Счастья</span></p>
+										<p><span class="text-mainslider__text-2">желаем</span></p>
+										<p><span class="text-mainslider__text-3">вам</span></p>
 									</div>
 									<div class="content-mainslider__footer">
-										<div class="content-mainslider__price rub">
-											от 45 000
+										<div class="content-mainslider__price">
 										</div>
-										<a href="#" class="content-mainslider__button">
+										<!-- <a href="#" class="content-mainslider__button">
 											<span>подробнее</span>
-										</a>
+										</a> -->
 									</div>
 								</div>
 								<div class="mainslider__image ibg">
-									<img src="img/mainslider/04.jpg" alt="main slider">
+									<img src="img/mainslider/19.jpg" alt="main slider">
 								</div>
 							</div>
 							<div class="mainslider__slide">
 								<div class="mainslider__content content-mainslider">
-									<div class="content-mainslider__title"><span>Мега</span>распродажа</div>
+									<div class="content-mainslider__title"><span>:)</span></div>
 									<div class="content-mainslider__text text-mainslider">
-										<p><span class="text-mainslider__text-1">Успей купить</span>тренажёры</p>
-										<p><span class="text-mainslider__text-2">по старой цене</span></p>
-										<p>до их <span class="text-mainslider__text-3">повышения</span></p>
+										<p><span class="text-mainslider__text-1">Счастья</span></p>
+										<p><span class="text-mainslider__text-2">желаем</span></p>
+										<p><span class="text-mainslider__text-3">вам</span></p>
 									</div>
 									<div class="content-mainslider__footer">
-										<div class="content-mainslider__price rub">
-											от 45 000
+										<div class="content-mainslider__price">
 										</div>
-										<a href="#" class="content-mainslider__button">
+										<!-- <a href="#" class="content-mainslider__button">
 											<span>подробнее</span>
-										</a>
+										</a> -->
 									</div>
 								</div>
 								<div class="mainslider__image ibg">
-									<img src="img/mainslider/05.jpg" alt="main slider">
+									<img src="img/mainslider/20.jpg" alt="main slider">
 								</div>
 							</div>
 						</div>

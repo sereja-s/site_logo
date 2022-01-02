@@ -720,7 +720,10 @@
 }
 
 .page__slider {
-  margin: 0 0 65px 0;
+  margin: 0 0 40px 0;
+  /* @media (max-width: 595px) {
+  	margin: 0 0 45px 0;
+  } */
 }
 
 /* .mainslider {
@@ -3080,9 +3083,20 @@ textarea.input {
   border-bottom: 1px dashed transparent;
 }
 
+/* .tabs-item {
+} */
+
 .info-product__body {
   background-color: #fafafa;
   padding: 35px 30px;
+}
+
+.info-product__block {
+  /* скроем вкладки изначально: */
+  /* display: none;
+  &:target {
+  	display: block;
+  } */
 }
 
 .info-product__block p {
@@ -3096,6 +3110,9 @@ textarea.input {
 .info-product__block p:last-child {
   margin: 0;
 }
+
+/* .tabs-block {
+} */
 
 .info-product__table {
   border-collapse: collapse;
@@ -3124,6 +3141,9 @@ textarea.input {
   color: #dadada;
   margin: 0 0 30px 0;
 }
+
+/* .checkout {
+} */
 
 .title-checkout {
   font-size: 36px;
@@ -3177,9 +3197,48 @@ textarea.input {
   border-bottom: 1px dashed transparent;
 }
 
+/* .tabs-item {
+} */
+
 .content-checkout__body {
   padding: 30px 0 0 0;
 }
+
+/* .content-checkout__block {
+} */
+
+/* .tabs-block {
+} */
+
+/* .checkout__content {
+} */
+
+/* .content-checkout {
+} */
+
+/* .tabs {
+} */
+
+/* .content-checkout__nav {
+} */
+
+/* .content-checkout__item {
+} */
+
+/* .tabs-item {
+} */
+
+/* .content-checkout__body {
+} */
+
+/* .content-checkout__block {
+} */
+
+/* .tabs-block {
+} */
+
+/* .content-checkout__form {
+} */
 
 .form-checkout__line {
   margin: 0 0 10px 0;
@@ -3225,6 +3284,18 @@ textarea.input {
 .form-checkout__text p:last-child {
   margin: 0;
 }
+
+/* .checkout__order {
+} */
+
+/* .order-checkout {
+} */
+
+/* .order-checkout__title {
+} */
+
+/* .order-checkout__items {
+} */
 
 .order-checkout__item {
   margin: 0 0 10px 0;
@@ -3350,6 +3421,16 @@ textarea.input {
   border-radius: 15px;
   background-color: #f68038;
   padding: 0 15px;
+}
+
+.tabs-block {
+  /* скроем вкладки изначально: */
+  display: none;
+}
+
+.tabs-block:target {
+  /* покажем содержимое вкладки при щелчке касании на заголовке ( в адресе которого указан путь к вкладке): */
+  display: block;
 }
 
 .no-webp .header{
@@ -4462,10 +4543,6 @@ textarea.input {
 
   .search-page__title span {
     margin: 0 3px;
-  }
-
-  .page__slider {
-    margin: 0 0 45px 0;
   }
 
   .btn {
